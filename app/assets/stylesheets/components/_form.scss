@@ -1,3 +1,4 @@
+
 html, body {
   display: flex;
   align-items: center;
@@ -55,12 +56,38 @@ input[type="text"][required] + label[placeholder]:before {
   background-position: center;
 }
 
-
 .float-container {
   border: solid 1px #ccc;
+  padding: 0 8px;
   position: relative;
 }
+
 .float-container input {
   border: none;
+  font-size: 16px;
   outline: 0;
+  padding: 16px 0 10px;
+}
+
+label {
+  font-size: 16px;
+  position: absolute;
+  transform-origin: top left;
+  transform: translate(0, 16px) scale(1);
+  transition: all .1s ease-in-out;
+  float: right;
+}
+
+.float-container.active label {
+  transform: translate(0, 4px) scale(.75);
+}
+
+.form-floating {
+  margin: 20px
+}
+
+.registration > .card {
+  width: 50rem;
+  margin: 0 auto;
+  float: none;
 }

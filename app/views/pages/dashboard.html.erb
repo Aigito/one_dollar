@@ -1,9 +1,16 @@
 <div class="jumbotron text-center">
   <h1 class="display-4"><%= "Welcome back, #{current_user.first_name} #{current_user.last_name}!"%></h1>
-  <p class="lead"><%= Faker::Movie.quote %></p>
+  <p class="lead">Some Random Quotes (To Be Changed): <%= Faker::Movie.quote %></p>
   <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <p>What do you feel like doing today?</p>
   <p class="lead">
     <a class="btn btn-primary btn-lg" href="goals/new" role="button">Add A New Goal</a>
+  <br>
+  <br>
   </p>
+  <p>Invested amount: 500 / <%= @user.investment%></p>
+  <p>Note: Currently this is hardcoded, will need to implement JS to make it dynamic</p>
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
 </div>

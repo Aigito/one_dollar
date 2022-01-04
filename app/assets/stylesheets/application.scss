@@ -2,12 +2,24 @@
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
+@import "bootstrap";
 
 // External libraries
-@import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.registration > .card {
+  width: 50rem;
+  margin: 0 auto;
+  float: none;
+}
+
+.login > .card {
+  width: 25rem;
+  margin: 0 auto;
+  float: none;
+}

@@ -1,0 +1,9 @@
+<br>
+
+<%= simple_form_for @goal do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :amount %>
+  <%= f.input :date %>
+  <%= f.submit "Save", class: "btn btn-primary" %>
+<% end %>

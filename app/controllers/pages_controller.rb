@@ -6,5 +6,6 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
+    @goals = Goal.all
   end
 end

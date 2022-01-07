@@ -3,6 +3,10 @@
     <h2><%= @goal.title.capitalize %><h2>
     <div>
       <p>Description: <%= @goal.description %></p>
-      <p>Amount: <%= @goal.amount %></p>
+      <p>Amount: <%= number_to_currency(@goal.amount, format: "%u%n")%></p>
+      <p>Recurring_investment: <%= number_to_currency(@goal.recurring_investment, format: "%u%n")%>/week</p>
+      <p>Total amount reached: <%=number_to_currency(@total_saved, format: "%u%n") %></p>
+      <p>Days left: <%= @days_left.to_i %> days</p>
+      <%= link_to "Edit Goal", edit_goal_path(@goal) %>
     </div>
 </div>

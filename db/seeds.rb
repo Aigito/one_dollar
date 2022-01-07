@@ -43,6 +43,7 @@ user = 0
       title: "#{Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 3)}",
       description: "#{Faker::Lorem.sentence(word_count: 8, supplemental: true, random_words_to_add: 7)}",
       amount: rand(200..500),
+      recurring_investment: rand(20..50),
       date: Date.strptime("#{Faker::Date.between(from: '2022-06-01', to: '2027-06-01')}", "%Y-%m-%d"),
       user_id: user
     )

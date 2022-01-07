@@ -1,7 +1,32 @@
+<%# 👇 TABS %>
+
 <div class="container">
-  <h1>All Goal </h1>
-  <table class="table">
-  <% @goals.each_with_index do |goal, index|%>
-  <%= goal.title %> <br>
-  <% end %>
+
+  <h1>Goals</h1>
+
+  <nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Active Goals</a>
+      <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Archived Goals</a>
+    </div>
+  </nav>
+
+  <div class="tab-content" id="nav-tabContent">
+
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+      <% @goals.each_with_index do |goal, index|%>
+        <% if goal.archived != true %>
+          <%= goal.title %> | <%= goal.amount %> | <%= link_to 'Archive', archive_goal_path(goal), method: :post%> <br>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+      <% @goals.each_with_index do |goal, index|%>
+        <% if goal.archived == true %>
+          <%= goal.title %> | <%= goal.amount %> | <%= link_to 'Unarchive', unarchive_goal_path(goal), method: :post%> <br>
+        <% end %>
+      <% end %>
+    </div>
+
 </div>

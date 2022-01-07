@@ -26,6 +26,18 @@ class GoalsController < ApplicationController
     end
   end
 
+  def archive
+    @goal = Goal.find(params[:id])
+    @goal.update(archived: true)
+    redirect_to goals_path
+  end
+
+  def unarchive
+    @goal = Goal.find(params[:id])
+    @goal.update(archived: false)
+    redirect_to goals_path
+  end
+
   def edit
   end
 

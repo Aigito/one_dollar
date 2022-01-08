@@ -10,6 +10,7 @@ class GoalsController < ApplicationController
     @days_left = @goal.date - Date.today
     @weeks_past = (Date.today - @goal.created_at.to_date) / 7
     @total_saved = @weeks_past * @goal.recurring_investment
+    @amount_in_year = @goal.recurring_investment * 52
   end
 
   def new

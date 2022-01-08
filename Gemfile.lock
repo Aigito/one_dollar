@@ -109,6 +109,7 @@ GEM
       activesupport (>= 5.0)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
+    income-tax (0.3.2)
     jbuilder (2.11.3)
       activesupport (>= 5.0.0)
     listen (3.7.0)
@@ -261,6 +262,7 @@ DEPENDENCIES
   dotenv-rails
   faker
   font-awesome-sass
+  income-tax (~> 0.3.2)
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)

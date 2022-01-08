@@ -7,6 +7,8 @@ class PagesController < ApplicationController
   def dashboard
     @user = current_user
     @goals = Goal.all
-    @percentage_completion = 750.0 / 1000.0 * 100
+    @invested = @user.invested
+    @investment = @user.investment
+    @percentage_completion = @invested.to_f / @investment * 100
   end
 end

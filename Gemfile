@@ -31,6 +31,8 @@ gem 'bootstrap', '~> 5.1.3'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'devise'
 gem 'faker'
+gem 'validates_timeliness', '~> 6.0.0.beta2'
+gem "chartkick"
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'

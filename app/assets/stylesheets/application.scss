@@ -11,15 +11,4 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-
-.registration > .card {
-  width: 50rem;
-  margin: 0 auto;
-  float: none;
-}
-
-.login > .card {
-  width: 25rem;
-  margin: 0 auto;
-  float: none;
-}
+// @import "bootstrap/scss/bootstrap";

@@ -5,13 +5,49 @@
   <p>What do you feel like doing today?</p>
   <p class="lead">
     <a class="btn btn-primary btn-lg" href="goals/new" role="button">Add A New Goal</a>
-  <br>
-  <br>
   </p>
-  <p>Invested amount: 250 / <%= @user.investment%></p>
-  <p>Note: Currently this is hardcoded, will need to implement JS to make it dynamic</p>
-  <div class="progress">
-    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+  <br>
+  <br>
+  <p>Remaining Surplus Cash: $<%= @invested %> / $<%= @investment %></p>
+  <div class="container progress">
+    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: <%= @percentage_completion %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+      <% @goals.each do |goal| %>
+        <% if goal.user == current_user && goal.archived == false %>
+          <div class="col-4">
+            <div class="card mb-4 h-100">
+              <div class="inner-card p-3">
+                <div class="float-right">
+                  <%= link_to goal_path(goal) do %>
+                    <i class="fas fa-trophy"></i>
+                  <% end %>
+                  <%= link_to edit_goal_path(goal) do %>
+                    <i class="fas fa-edit"></i>
+                  <% end %>
+                  <%= link_to archive_goal_path(goal), method: :post do %>
+                    <i class="fas fa-archive"></i>
+                  <% end %>
+                </div>
+                <div class="card-top">
+                  <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image caption">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title text-truncate">Title: <%= goal.title %></h5>
+                  <p class="card-text text-truncate">Description: <%= goal.description %></p>
+                  <p class="card-text">Goal Amount: <%= goal.amount %></p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">TO DO: Days till completion</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
   </div>
 
 <div class= "taxcalculator">

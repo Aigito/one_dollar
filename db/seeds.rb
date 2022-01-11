@@ -11,7 +11,6 @@ puts "Cleaning database..."
 Goal.destroy_all
 User.destroy_all
 
-
 puts "Creating Users..."
 
 david = User.create!(
@@ -33,7 +32,6 @@ david = User.create!(
   puts "Created User #{user.first_name} #{user.last_name}"
 end
 
-
 puts "Creating Goals..."
 print User.last.id
 user = david.id
@@ -45,7 +43,8 @@ user = david.id
       amount: rand(200..500),
       recurring_investment: rand(20..50),
       date: Date.strptime("#{Faker::Date.between(from: '2022-06-01', to: '2027-06-01')}", "%Y-%m-%d"),
-      user_id: user
+      user_id: user,
+      archived: false
     )
     puts "Created Goal #{goal.title} for user ID #{user}"
   end

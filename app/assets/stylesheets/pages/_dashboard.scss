@@ -1,0 +1,32 @@
+.progress {
+  background-color: white;
+}
+
+.container {
+  padding: 0;
+}
+
+.card-img-top {
+  width: 50%;
+}
+
+.card {
+  border: none;
+  background-color: #F4F4F4;
+}
+
+.inner-card {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  background-color: #FFF;
+}
+
+.card-top {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.float-right > a {
+  text-decoration: none;
+}

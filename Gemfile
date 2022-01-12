@@ -31,6 +31,8 @@ gem 'bootstrap', '~> 5.1.3'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'devise'
 gem 'faker'
+gem 'validates_timeliness', '~> 6.0.0.beta2'
+gem "chartkick"
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
@@ -49,7 +51,7 @@ group :development do
   gem 'web-console', '>= 4.1.0'
   # Display performance information such as SQL time and flame graphs for each request in your browser.
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
-  gem 'rack-mini-profiler', '~> 2.0'
+  # gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'

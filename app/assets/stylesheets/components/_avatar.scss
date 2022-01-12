@@ -18,3 +18,24 @@
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
 }
+
+.rounded-circle-profile-picture {
+  border-radius:50%;
+  width:100px;
+  height:100px;
+  margin-bottom: 10px;
+  object-fit: cover;
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  overflow: hidden;
+}
+
+.rounded-circle-navbar-profile-picture {
+  border-radius:50%;
+  width:40px;
+  height:40px;
+  object-fit: cover;
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  overflow: hidden;
+}

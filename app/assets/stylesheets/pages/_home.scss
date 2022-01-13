@@ -1,1 +1,66 @@
-// Specific CSS for your home-page
+Specific CSS for your home-page
+.home-container {
+  background-color: rgb(210, 216, 216);
+}
+
+.banner {
+  background-color: rgb(39, 47, 47);
+  background-size: cover;
+  height: 24vw;
+}
+
+.image-size {
+  width: 17rem;
+  height: auto;
+
+}
+
+.banner h1 {
+  color: #12d69f;
+}
+
+.font-weight-900 {
+  font-weight: 900;
+}
+
+.banner p {
+  color: white;
+  margin-top: 1.5vw;
+}
+
+.navbar-lewagon {
+  margin-bottom: 0px;
+}
+
+.btn-green {
+  background-color: #12d69f;
+  color:white;
+  padding: 10px 50px;
+  display: inline-block;
+  border-radius: 6px;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.btn-green:hover {
+  background-color: #079a70;
+  color:white;
+}
+
+.text-container {
+  font-size: large;
+  max-width: 20vw;
+}
+
+.text-container p {
+  font-size: 16px;
+}
+.text-colour {
+  color: rgb(39, 47, 47);
+}
+
+.carousel-indicators,
+.carousel-control-next,
+.carousel-control-prev /*, .carousel-indicators */ {
+    filter: invert(75%);
+}

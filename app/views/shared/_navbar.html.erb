@@ -1,36 +1,63 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="logo-div">
-    <div class="logo">
-      <%= link_to "/", class: "navbar-brand" do %>
-        <%= image_tag "logo-removedbg.png" %>
-      <% end %>
-    </div>
-    <p class="logo-text">One Dollar</p>
-  </div>
+<head>
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
 
-  <div class="navbar-links">
-    <%= link_to "Dashboard", dashboard_path, class: "nav-link hover:text-bold" %>
-    <%= link_to "About", dashboard_path, class: "nav-link" %>
-    <%= link_to "Contact Us", dashboard_path, class: "nav-link" %>
-  </div>
+</head>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item dropdown">
-          <%= image_tag user_avatar(current_user, 500), class: "rounded-circle-navbar-profile-picture avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+<body>
+    <nav class="navbar">
+      <ul class="navbar-nav">
+        <% if user_signed_in? %>
+          <li class="logo">
+            <a href="/" class="nav-link">
+              <span class="link-text logo-text">One Dollar</span>
+              <%= image_tag("logo-removedbg.png", class: "logo-img") %>
+            </a>
+          </li>
 
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Account Information", edit_user_registration_path, class: "dropdown-item" %>
-            <%= link_to "Financial Information", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-</div>
+          <li class="nav-item">
+            <a href="/dashboard" class="nav-link">
+              <i class="fas fa-chalkboard"></i>
+              <span class="link-text">Dashboard</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/goals" class="nav-link">
+              <i class="fas fa-bullseye"></i>
+              <span class="link-text">Goals</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="far fa-clipboard"></i>
+              <span class="link-text">Reports</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-cogs"></i>
+              <span class="link-text">Account Information</span>
+            </a>
+          </li>
+
+          <li class="nav-item nav-link" id="LogButton">
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="link-text">Log Out</span>
+            <% end %>
+          </li>
+        <% else %>
+          <li class="nav-item nav-link" id="LogButton">
+            <%= link_to new_user_session_path do %>
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="link-text">Log In</span>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
+</body>

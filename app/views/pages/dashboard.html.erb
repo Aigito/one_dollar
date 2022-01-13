@@ -1,10 +1,11 @@
 <div class="jumbotron text-center">
-  <h1 class="display-4"><%= "Welcome back, #{current_user.first_name} #{current_user.last_name}!"%></h1>
+  <h1 class="display-4"><b><%= "Welcome back, #{current_user.first_name} #{current_user.last_name}!"%></b></h1>
   <p class="lead">Some Random Quotes (To Be Changed): <%= Faker::Movie.quote %></p>
   <hr class="my-4">
-  <p>What do you feel like doing today?</p>
+  <p><b>What do you feel like doing today?</b></p>
   <p class="lead">
     <a class="btn btn-primary btn-lg" href="goals/new" role="button">Add A New Goal</a>
+    <a class="btn btn-primary btn-lg" href="goals" role="button">View All Goals</a>
   </p>
   <br>
   <br>

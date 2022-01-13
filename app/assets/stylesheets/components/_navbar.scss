@@ -24,7 +24,15 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background: #6649b8;
+  background: #2E8688;
+}
+
+#LogButton > a {
+  text-decoration: none;
+}
+
+.atataxcalculator-default {
+  z-index: 10;
 }
 
 .main {
@@ -37,6 +45,7 @@ body::-webkit-scrollbar-thumb {
   background-color: var(--bg-primary);
   transition: width 200ms ease;
   padding: 0;
+  z-index: 100;
 }
 
 .navbar-nav {
@@ -78,7 +87,14 @@ body::-webkit-scrollbar-thumb {
   margin-left: 1rem;
 }
 
-.nav-link svg {
+.nav-link .logo-img {
+  min-width: 2rem;
+  margin: 0 1.5rem;
+  max-height: 32px;
+}
+
+.nav-link i {
+  font-size: 1.5rem;
   min-width: 2rem;
   margin: 0 1.5rem;
 }
@@ -108,12 +124,12 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
 }
 
-.logo svg {
+.logo i {
   transform: rotate(0deg);
   transition: transform var(--transition-speed);
 }
 
-.navbar:hover .logo svg {
+.navbar:hover .logo i {
   transform: rotate(-180deg);
 }
 

@@ -32,19 +32,20 @@ Specific CSS for your home-page
   margin-bottom: 0px;
 }
 
-.btn-green {
-  background-color: #12d69f;
-  color:white;
-  padding: 10px 50px;
-  display: inline-block;
-  border-radius: 6px;
-  margin-top: 20px;
-  text-decoration: none;
-}
+.get-started {
+    background-color: #12d69f;
+    color:white;
+    padding: 10px 50px;
+    display: inline-block;
+    border-radius: 6px;
+    margin-top: 20px;
+    text-decoration: none;
 
-.btn-green:hover {
-  background-color: #079a70;
-  color:white;
+  &:hover {
+    text-decoration: none;
+    background-color: #079a70;
+    color:white;
+  }
 }
 
 .text-container {

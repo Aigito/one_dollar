@@ -6,58 +6,49 @@
 </head>
 
 <body>
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
       <ul class="navbar-nav">
-        <% if user_signed_in? %>
           <li class="logo">
-            <a href="/" class="nav-link">
+            <a href="/" class="nav-links">
               <span class="link-text logo-text">One Dollar</span>
               <%= image_tag("logo-removedbg.png", class: "logo-img") %>
             </a>
           </li>
 
           <li class="nav-item">
-            <a href="/dashboard" class="nav-link">
+            <a href="/dashboard" class="nav-links">
               <i class="fas fa-chalkboard"></i>
               <span class="link-text">Dashboard</span>
             </a>
           </li>
 
           <li class="nav-item">
-            <a href="/goals" class="nav-link">
+            <a href="/goals" class="nav-links">
               <i class="fas fa-bullseye"></i>
               <span class="link-text">Goals</span>
             </a>
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-links">
               <i class="far fa-clipboard"></i>
               <span class="link-text">Reports</span>
             </a>
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-links">
               <i class="fas fa-cogs"></i>
               <span class="link-text">Account Information</span>
             </a>
           </li>
 
-          <li class="nav-item nav-link" id="LogButton">
+          <li class="nav-item nav-links" id="LogButton">
             <%= link_to destroy_user_session_path, method: :delete do %>
               <i class="fas fa-sign-out-alt"></i>
               <span class="link-text">Log Out</span>
             <% end %>
           </li>
-        <% else %>
-          <li class="nav-item nav-link" id="LogButton">
-            <%= link_to new_user_session_path do %>
-              <i class="fas fa-sign-out-alt"></i>
-              <span class="link-text">Log In</span>
-            <% end %>
-          </li>
-        <% end %>
       </ul>
     </nav>
 </body>

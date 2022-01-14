@@ -9,7 +9,15 @@
   border-radius: 3px;
   .btn {
     width: 100%;
-    margin-top: 20px;
-    margin-bottom: 15px
+  }
+}
+
+.sign-up-btn, .forgot-password {
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    color: white;
+    text-decoration: none;
   }
 }

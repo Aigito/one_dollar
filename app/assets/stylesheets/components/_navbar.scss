@@ -2,7 +2,7 @@
   font-size: 16px;
   font-family: 'Montserrat', sans-serif;
   --text-primary: #b6b6b6;
-  --text-secondary: #ececec;
+  --text-secondary: #12D69F;
   --bg-primary: #23232e;
   --bg-secondary: #141418;
   --transition-speed: 600ms;
@@ -27,20 +27,15 @@ body::-webkit-scrollbar-thumb {
   background: #2E8688;
 }
 
-#LogButton > a {
-  text-decoration: none;
-}
-
 .atataxcalculator-default {
   z-index: 10;
 }
 
 .main {
   margin-left: 5rem;
-  padding: 1rem;
 }
 
-.navbar {
+#navbar {
   position: fixed;
   background-color: var(--bg-primary);
   transition: width 200ms ease;
@@ -66,7 +61,7 @@ body::-webkit-scrollbar-thumb {
   margin-top: auto;
 }
 
-.nav-link {
+.nav-links {
   display: flex;
   align-items: center;
   height: 5rem;
@@ -76,7 +71,25 @@ body::-webkit-scrollbar-thumb {
   transition: var(--transition-speed);
 }
 
-.nav-link:hover {
+.nav-links:hover {
+  text-decoration: none;
+  filter: grayscale(0%) opacity(1);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+#LogButton > a {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.7);
+  transition: var(--transition-speed);
+}
+
+#LogButton > a:hover {
+  text-decoration: none;
   filter: grayscale(0%) opacity(1);
   background: var(--bg-secondary);
   color: var(--text-secondary);
@@ -87,28 +100,16 @@ body::-webkit-scrollbar-thumb {
   margin-left: 1rem;
 }
 
-.nav-link .logo-img {
+.nav-links .logo-img {
   min-width: 2rem;
   margin: 0 1.5rem;
   max-height: 32px;
 }
 
-.nav-link i {
+.nav-links i {
   font-size: 1.5rem;
   min-width: 2rem;
   margin: 0 1.5rem;
-}
-
-.fa-primary {
-  color: #ff7eee;
-}
-
-.fa-secondary {
-  color :#df49a6;
-}
-
-.fa-primary, .fa-secondary {
-  transition: var(--transition-speed);
 }
 
 .logo {
@@ -150,7 +151,7 @@ body::-webkit-scrollbar-thumb {
     flex-direction: row;
   }
 
-  .nav-link {
+  .nav-links {
     justify-content: center;
   }
 

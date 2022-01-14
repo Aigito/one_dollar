@@ -36,13 +36,12 @@
             </a>
           </li>
 
-          <li class="nav-item">
-            <a href="#" class="nav-links">
+          <li class="nav-item nav-links" id="LogButton">
+            <%= link_to edit_user_registration_path do %>
               <i class="fas fa-cogs"></i>
-              <span class="link-text">Account Information</span>
-            </a>
+              <span class="link-text">Settings</span>
+            <% end %>
           </li>
-
           <li class="nav-item nav-links" id="LogButton">
             <%= link_to destroy_user_session_path, method: :delete do %>
               <i class="fas fa-sign-out-alt"></i>

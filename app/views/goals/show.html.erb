@@ -1,21 +1,31 @@
-<div class="container">
-    <h1>Your Goal </h1> <br>
-    <h2><%= @goal.title.capitalize %><h2>
-    <div>
-      <p>Description: <%= @goal.description %></p>
-      <p>Amount: <%= number_to_currency(@goal.amount, format: "%u%n")%></p>
-      <p>Recurring investment: <%= number_to_currency(@goal.recurring_investment, format: "%u%n")%>/week</p>
-      <p>Total amount reached: <%=number_to_currency(@total_saved, format: "%u%n") %></p>
-      <p>Days left: <%= @days_left.to_i %> days</p>
-      <div class="progress-title">
-          <p class= "text-center">Total Amount: <%=number_to_currency(@total_saved, format: "%u%n") %> / $<%= @goal.amount %></p>
-          <div class="progress">
-            <div class="progress-bar progress-bar-striped bg-success w3-center" role="progressbar" style="width:<%= @total_saved %> / <%= @goal.amount %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><%=number_to_currency(@total_saved, format: "%u%n")%> / $<%= @goal.amount %>  </div>
-          </div>
-      </div>
-      <%= line_chart [
-        {name: "Projected Value", data: {Date.today => @goal.recurring_investment, Date.today.next_year(1).to_date => @amount_in_year }}
-      ], xtitle: "months", ytitle: "Total amount, $", prefix: "$", round: 2, zeros: true %>
-      <%= link_to "Edit Goal", edit_goal_path(@goal) %>
+<div class="container px-6 py-4">
+  <div class="background-card-1 p-3">
+    <h1 class="heading-colour">Your Goal </h1>
+    <br>
+    <h2 class="text-white"><%= @goal.title.capitalize %><h2>
+      <p class="text-size text-white"><%=@goal.description%></p>
+  </div>
+    <br>
+  <div class="background-card-2 p-3 heading-colour text-size">
+    <p>Amount: <span style="color: #272F2F"><%= number_to_currency(@goal.amount, format: "%u%n") %></span></p>
+    <p>Recurring_investment: <span style="color: #272F2F"><%= number_to_currency(@goal.recurring_investment, format: "%u%n") %>/week</span></p>
+    <p>Total amount reached: <span style="color: #272F2F"><%= number_to_currency(@total_saved, format: "%u%n") %></span>
+    <p>Days left: <span style="color: #272F2F"><%= @time_left %></span></p>
+  </div>
+    <br>
+  <div class="background-card-3 p-3 text-white text-size opacity-75">
+    <div class="progress-title">
+        <p class= "text-center">Total Amount: <span style="color: #272F2F"><%= number_to_currency(@total_saved, format: "%u%n") %> / $<%= @goal.amount %></span></p>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-success w3-center" role="progressbar" style="width:<%= @total_saved %> / <%= @goal.amount %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><%=number_to_currency(@total_saved, format: "%u%n")%> / $<%= @goal.amount %>  </div>
+        </div>
     </div>
+  </div>
+    <br>
+  <div class="background-card-2 p-3 heading-colour text-size">
+    <%= line_chart [
+      {name: "Projected Value", data: {Date.today => 0, Date.today.next_year(1).to_date => @amount_in_year }}
+    ], xtitle: "months", ytitle: "Total amount, $", prefix: "$", round: 2, zeros: true %>
+  </div>
+    <%= link_to "Edit Goal", edit_goal_path(@goal) %>
 </div>

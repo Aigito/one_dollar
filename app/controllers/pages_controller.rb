@@ -7,7 +7,12 @@ class PagesController < ApplicationController
   def dashboard
     @user = current_user
     @goals = Goal.all
-    @invested = @user.invested
+    @total_invested = 0
+
+    @goals.each do |goal|
+      @total_invested += goal.amount if goal.user == current_user && goal.archived == false
+    end
+
     @investment = @user.investment
     @percentage_completion = @invested.to_f / @investment * 100
   end

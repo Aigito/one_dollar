@@ -9,7 +9,11 @@
     </p>
     <br>
     <br>
-    <p>Remaining Surplus Cash: $<%= @invested %> / $<%= @investment %></p>
+    <% if @total_invested > @investment %>
+      <p>Remaining Surplus Cash: <span style="color:red"> $<%= @total_invested %> </span> / $<%= @investment %></p>
+    <% else %>
+      <p>Remaining Surplus Cash: $<%= @total_invested %> / $<%= @investment %></p>
+    <% end%>
   </div>
 
   <div class="container">

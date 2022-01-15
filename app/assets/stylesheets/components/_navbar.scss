@@ -178,3 +178,8 @@ body::-webkit-scrollbar-thumb {
     transition: opacity var(--transtion-speed);
   }
 }
+
+.nav-tabs {
+  padding-top: 0;
+  margin-top: 0;
+}

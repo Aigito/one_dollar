@@ -19,7 +19,7 @@
   <div class="container">
     <div class="row">
         <% @goals.each do |goal| %>
-          <% if goal.user == current_user && goal.archived == false %>
+          <% if goal.user == current_user && goal.archived != true %>
             <div class="col-4">
               <div class="card mb-4 h-100">
                 <div class="inner-card p-3">
@@ -50,6 +50,7 @@
             </div>
           <% end %>
         <% end %>
+      </div>
     </div>
   </div>
 </div>

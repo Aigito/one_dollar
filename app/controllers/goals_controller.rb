@@ -7,8 +7,15 @@ class GoalsController < ApplicationController
 
   def show
     find_goal
-    @days_left = @goal.date - Date.today
-    @weeks_past = (Date.today - @goal.created_at.to_date) / 7
+    @days_left = (@goal.date - Date.today).to_i
+    if @days_left >= 365
+      @years = @days_left / 365
+      @days = @days_left - (365 * @years)
+      @time_left = "#{@years}y and #{@days}d"
+    else
+      @time_left = "#{@days_left} day/s"
+    end
+    @weeks_past = ((Date.today - @goal.created_at.to_date) / 7).to_i
     @total_saved = @weeks_past * @goal.recurring_investment
     @amount_in_year = @goal.recurring_investment * 52
   end
@@ -20,6 +27,7 @@ class GoalsController < ApplicationController
   def create
     @goal = Goal.new(goal_params)
     @goal.user = current_user
+    @goal.archived = false
     if @goal.save
       redirect_to goals_path
     else

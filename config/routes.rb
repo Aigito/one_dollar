@@ -8,4 +8,11 @@ Rails.application.routes.draw do
   post 'goals/:id/unarchive', to: 'goals#unarchive', as: :unarchive_goal
 
   resources :goals
+
+  # get "users", to: "users#index"
+  # delete "users/:id", to: "users#destroy"
+
+  match 'users/:id' => 'users#destroy', :via => :delete, :as => :destroy_user
+
+  get 'details', to: "details#index"
 end

@@ -1,0 +1,33 @@
+.heading-colour {
+  // color: red;
+  color: $heading-colour;
+}
+
+// .base-colour {
+//   color: #12d69f ;
+// }
+.text-white {
+  color: white;
+}
+.text-size {
+ font-size: 1.1rem;
+}
+
+.background-card-1 {
+  background-color: $base-colour;
+  border-radius: 6px;
+  // border: 0.15rem solid lightgray;
+  box-shadow: 0 0 1px 1px lightgray;
+}
+
+.background-card-2 {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 1px 1px lightgray;
+}
+
+.background-card-3 {
+  background-color: #12d69f;
+  border-radius: 6px;
+  box-shadow: 0 0 1px 1px lightgray;
+}

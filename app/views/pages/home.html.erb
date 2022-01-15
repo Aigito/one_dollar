@@ -1,13 +1,53 @@
-<div class="container">
-  <br>
-  <div class="d-flex justify-content-around">
+<div class="home-container">
+  <div class="banner d-flex justify-content-evenly align-items-center">
     <div>
-        <h1>Start saving today</h1>
+        <h1 class="font-weight-900">Start saving for <br> your goals in life</h1>
         <p>Save your gold, achieve your goals</p>
-        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-secondary"%>
+        <span><%= link_to "Get Started", new_user_registration_path, class: "btn-green get-started"%></span>
     </div>
-      <div>
-        <h1>Photo</h1>
+    <div>
+      <%= image_tag "goldcoins.png", class: "image-size img-fluid", alt: "captivating saving image" %>
     </div>
+  </div>
+  <div class="text-container p-3 text-colour mx-auto">
+    <h1 class="text-center font-weight-900">Create a <span style="color: #12d69f">plan</span> and stick to it </h1>
+    <p class="text-center">It's hard to get started, that's why we've done all the work for you</p>
+  </div>
+  <div id="carouselExampleCaptions" class="carousel slide text-secondary" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%= image_tag "showpage.png", crop: :fill, class: "d-block w-50 mx-auto img-fluid", alt: "first slide" %>
+        <div class="carousel-caption d-none d-md-block">
+          <%# <h5>First slide label</h5> %>
+          <p class="text-colour opacity-75 my-0">Check the status of your goal</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "dashboard.png", crop: :fill, class: "d-block w-50 mx-auto img-fluid", alt: "second slide" %>
+        <div class="carousel-caption d-none d-md-block">
+          <%# <h5>Second slide label</h5> %>
+          <p class="text-colour opacity-75 my-0">Keep track of all your goals</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "newgoal.png", crop: :fill, class: "d-block w-50 mx-auto img-fluid", alt: "third slide" %>
+        <div class="carousel-caption d-none d-md-block">
+          <%# <h5>First slide label</h5> %>
+          <p class="text-colour opacity-75 my-0">Create new goals</p>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
 </div>

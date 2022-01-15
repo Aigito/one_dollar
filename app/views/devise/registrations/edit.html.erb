@@ -6,20 +6,6 @@ rail<div class= "registration">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= bootstrap_devise_error_messages! %>
 
-         <div class="form-group">
-            <div class = "d-flex flex-row">
-                <div class="row">
-                  <div class="col-12 col-sm-4">
-                    <%= image_tag user_avatar(resource, 500), class: "rounded-circle-profile-picture" %>
-                  </div>
-                  <div class="col-12 col-sml-8 avatar-field">
-                      <%= f.file_field :avatar %>
-                  </div>
-                </div>
-            </div>
-          </div>
-
-
         <div class="form-floating mb-3">
                 <%= f.email_field :email,
                                   autofocus: true,
@@ -29,6 +15,13 @@ rail<div class= "registration">
                 <%= f.label :email %>
         </div>
 
+        <div class="form-floating mb-3">
+                <%= f.number_field :investment,
+                                  autocomplete: 'investment',
+                                  class: 'form-control',
+                                  placeholder:"Investment Amount" %>
+                <%= f.label :Investment_amount %>
+        </div>
 
         <div class="form-floating mb-3">
                 <%= f.password_field :password,
@@ -52,7 +45,7 @@ rail<div class= "registration">
                                     autocomplete: 'current-password',
                                     class: 'form-control',
                                     placeholder: "Current password" %>
-              <small class="form-text text-muted"><%= t('.We_need_your_current_password_to_confirm_your_changes') %></small>
+              <small class="form-text text-muted"><%= t('.Please_enter_current_password_to_confirm_your_changes') %></small>
               <%= f.label :current_password %>
         </div>
 

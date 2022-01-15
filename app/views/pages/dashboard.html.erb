@@ -30,7 +30,7 @@
                     <%= link_to edit_goal_path(goal) do %>
                       <i class="fas fa-edit"></i>
                     <% end %>
-                    <%= link_to archive_goal_path(goal), method: :post do %>
+                    <%= button_to archive_goal_path(goal), method: :post do %>
                       <i class="fas fa-archive"></i>
                     <% end %>
                   </div>

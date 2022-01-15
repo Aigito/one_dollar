@@ -30,14 +30,15 @@ class GoalsController < ApplicationController
   def archive
     @goal = Goal.find(params[:id])
     @goal.update(archived: true)
-    redirect_to goals_path
+    redirect_to dashboard_path
   end
 
   def unarchive
     @goal = Goal.find(params[:id])
     @goal.update(archived: false)
     @goals = Goal.all
-    render :archived_goals_tab
+    redirect_to goals_path
+    # render :archived_goals_tab
   end
 
   def archived_goals_tab

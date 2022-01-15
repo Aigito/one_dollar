@@ -6,14 +6,14 @@
     <p><b>What do you feel like doing today?</b></p>
     <p class="lead">
       <a class="btn btn-primary btn-lg" href="goals/new" role="button">Add A New Goal</a>
-      <a class="btn btn-primary btn-lg" href="goals" role="button">View All Goals</a>
     </p>
     <br>
     <br>
-    <p>Remaining Surplus Cash: $<%= @invested %> / $<%= @investment %></p>
-    <div class="container progress">
-      <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: <%= @percentage_completion %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
+    <% if @total_invested > @investment %>
+      <p>Remaining Surplus Cash: <span style="color:red; font-weight:bold"> $<%= @total_invested %> </span> / $<%= @investment %></p>
+    <% else %>
+      <p>Remaining Surplus Cash:  <span style="color:#12D69F; font-weight:bold"> $<%= @total_invested %> </span> / $<%= @investment %></p>
+    <% end%>
   </div>
 
   <div class="container">
@@ -30,7 +30,7 @@
                     <%= link_to edit_goal_path(goal) do %>
                       <i class="fas fa-edit"></i>
                     <% end %>
-                    <%= link_to archive_goal_path(goal), method: :post do %>
+                    <%= button_to archive_goal_path(goal), method: :post, :onclick => "return confirm('Are you sure you want to archive this goal?')" do %>
                       <i class="fas fa-archive"></i>
                     <% end %>
                   </div>
@@ -50,20 +50,6 @@
             </div>
           <% end %>
         <% end %>
-    </div>
-
-  <div class= "taxcalculator">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div id="atataxcalculator" class="atataxcalculator-default">
-          <div class="atataxcalculator-options atataxcalculator-show-up"></div>
-          <div class="atataxcalculator-table atataxcalculator-show-up"></div>
-          <div class="atataxcalculator-anchors atataxcalculator-show-up"><p>Tax Calculator from <a href="https://calculatorsonline.com.au">calculatorsonline.com.au</a></p>
-          </div>
-        </div>
-          <script type="text/javascript" src="//calculatorsonline.com.au/external/!main/widget.min.js"></script>
-        </div>
-      </div>
     </div>
   </div>
 </div>

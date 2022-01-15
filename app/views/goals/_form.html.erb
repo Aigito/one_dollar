@@ -1,10 +1,10 @@
 <br>
 
 <%= simple_form_for @goal do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :amount %>
-  <%= f.input :recurring_investment%> <%= '/week'%>
-  <%= f.input :date %>
+  <%= f.input :title, :label => "Goal Title: " %>
+  <%= f.input :description, :label => "Goal Description: " %>
+  <%= f.input :amount, :label => "Amount: " %>
+  <%= f.input :recurring_investment, :label => "Investment/week"%>
+  <%= f.input :date, :label => "When would you like to achieve this goal by? P/S: Be Reasonable" %>
   <%= f.submit "Save", class: "btn btn-primary" %>
 <% end %>

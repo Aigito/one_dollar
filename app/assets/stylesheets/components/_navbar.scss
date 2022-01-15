@@ -48,15 +48,9 @@ body::-webkit-scrollbar-thumb {
   padding: 0;
   margin: 0;
   display: flex;
-<<<<<<< HEAD
-  justify-content: space-between;
-  width: 22rem;
-  margin-right: 6rem;
-=======
   flex-direction: column;
   align-items: center;
   height: 100%;
->>>>>>> 2b865de353fd203ddc6600c542cf617124acd985
 }
 
 .nav-item {

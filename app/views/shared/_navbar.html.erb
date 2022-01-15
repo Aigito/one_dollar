@@ -6,12 +6,22 @@
 </head>
 
 <body>
+
+
     <nav class="navbar" id="navbar">
       <ul class="navbar-nav">
+
           <li class="logo">
             <a href="/" class="nav-links">
               <span class="link-text logo-text">One Dollar</span>
               <%= image_tag("logo-removedbg.png", class: "logo-img") %>
+            </a>
+          </li>
+
+          <li class="nav-item" id="Avatar">
+            <a href="/dashboard" class="nav-links">
+              <%= image_tag user_avatar(current_user, 500), class: "avatar dropdown-toggle rounded-circle-navbar-profile-picture" %>
+              <span class="link-text"><%= "#{current_user.first_name} #{current_user.last_name}" %></span>
             </a>
           </li>
 
@@ -42,6 +52,7 @@
               <span class="link-text">Settings</span>
             <% end %>
           </li>
+
           <li class="nav-item nav-links" id="LogButton">
             <%= link_to destroy_user_session_path, method: :delete do %>
               <i class="fas fa-sign-out-alt"></i>

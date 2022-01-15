@@ -13,6 +13,7 @@
 .card {
   border: none;
   background-color: #F4F4F4;
+  padding-top: 2rem;
 }
 
 .inner-card {
@@ -29,4 +30,8 @@
 
 .float-right > a {
   text-decoration: none;
+}
+
+.jumbotron {
+  margin-bottom: 0;
 }

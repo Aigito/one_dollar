@@ -4,7 +4,7 @@ module ApplicationHelper
     if user.avatar.attached?
       user.avatar.variant(resize: "#{size}x#{size}")
     else
-    image_tag "account", class: "registration-brand-small rounded-circle"
+      "account.png"
    end
   end
 end

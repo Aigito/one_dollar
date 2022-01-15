@@ -18,6 +18,7 @@
   display: flex;
   justify-content: space-between;
   width: 22rem;
+  margin-right: 6rem;
 }
 
 .nav-link:hover {
@@ -31,4 +32,9 @@
 .logo-text {
   align-self: center;
   margin: 0;
+}
+
+.nav-tabs {
+  padding-top: 0;
+  margin-top: 0;
 }

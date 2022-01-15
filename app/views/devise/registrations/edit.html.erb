@@ -54,9 +54,9 @@ rail<div class= "registration">
         </div>
       <% end %>
 
-      <p><%= button_to "Delete Account", destroy_user_path(current_user), method: :delete, :onclick => "return confirm('WARNING! This will delete everything associated with your account. Are you sure?')" %></p>
+      <p><%= button_to "Delete Account", destroy_user_path(current_user), method: :delete, class: "btn btn-primary", :onclick => "return confirm('WARNING! This will delete everything associated with your account. Are you sure?')" %></p>
 
-      <%= link_to t('.back'), :back %>
+      <%= link_to t('.back'), :back, class: "btn btn-primary" %>
     </div>
   </div>
 </div>

@@ -36,9 +36,11 @@ puts "Creating Goals..."
 print User.last.id
 user = david.id
 5.times do
+  sample_goals = ["Travel to Tuvalu", "Get a switch for isolation", "Not eat Maccas anymore -_-' "]
+  count = 0
   3.times do
     goal = Goal.create!(
-      title: "#{Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 3)}",
+      title: "#{sample_goals[count]}",
       description: "#{Faker::Lorem.sentence(word_count: 8, supplemental: true, random_words_to_add: 7)}",
       amount: rand(200..500),
       recurring_investment: rand(20..50),
@@ -47,6 +49,7 @@ user = david.id
       archived: false
     )
     puts "Created Goal #{goal.title} for user ID #{user}"
+    count += 1
   end
   user += 1
 end

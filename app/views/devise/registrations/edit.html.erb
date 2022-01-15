@@ -29,6 +29,13 @@
                 <%= f.label :email %>
         </div>
 
+        <div class="form-floating mb-3">
+                <%= f.number_field :investment,
+                                  autocomplete: 'investment',
+                                  class: 'form-control',
+                                  placeholder:"Investment Amount" %>
+                <%= f.label :Investment_amount %>
+        </div>
 
         <div class="form-floating mb-3">
                 <%= f.password_field :password,
@@ -52,7 +59,7 @@
                                     autocomplete: 'current-password',
                                     class: 'form-control',
                                     placeholder: "Current password" %>
-              <small class="form-text text-muted"><%= t('.We_need_your_current_password_to_confirm_your_changes') %></small>
+              <small class="form-text text-muted"><%= t('.Please_enter_current_password_to_confirm_your_changes') %></small>
               <%= f.label :current_password %>
         </div>
 

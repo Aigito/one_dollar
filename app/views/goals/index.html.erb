@@ -1,30 +1,41 @@
 <div class="container">
 
-  <h1>Goals</h1>
+  <h1>Archived Goals</h1>
 
-  <nav>
-    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-      <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Active Goals</a>
-      <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Archived Goals</a>
-    </div>
-  </nav>
-
-  <div class="tab-content" id="nav-tabContent">
-
-    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-      <% @goals.each_with_index do |goal, index|%>
-        <% if goal.user == current_user && goal.archived != true %>
-          <%= goal.title %> | <%= goal.amount %> | <%= link_to 'Archive', archive_goal_path(goal), method: :post%> <br>
+  <div class="container">
+    <div class="row">
+        <% @goals.each do |goal| %>
+          <% if goal.user == current_user && goal.archived == true %>
+            <div class="col-4">
+              <div class="card mb-4 h-100">
+                <div class="inner-card p-3">
+                  <div class="float-right">
+                    <%= link_to goal_path(goal) do %>
+                      <i class="fas fa-trophy"></i>
+                    <% end %>
+                    <%= link_to edit_goal_path(goal) do %>
+                      <i class="fas fa-edit"></i>
+                    <% end %>
+                    <%= button_to unarchive_goal_path(goal), method: :post do %>
+                      <i class="fas fa-archive"></i>
+                    <% end %>
+                  </div>
+                  <div class="card-top">
+                    <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image caption">
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title text-truncate">Title: <%= goal.title %></h5>
+                    <p class="card-text text-truncate">Description: <%= goal.description %></p>
+                    <p class="card-text">Goal Amount: <%= goal.amount %></p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">TO DO: Days till completion</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
-
-    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-      <% @goals.each_with_index do |goal, index|%>
-        <% if goal.user == current_user && goal.archived == true %>
-          <%= goal.title %> | <%= goal.amount %> | <%= link_to 'Unarchive', unarchive_goal_path(goal), method: :post%> <br>
-        <% end %>
-      <% end %>
     </div>
 
 </div>

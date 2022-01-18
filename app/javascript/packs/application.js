@@ -23,7 +23,33 @@ import "chartkick/chart.js";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
+// Import Sweet Alert
+import { initSweetalert } from '../plugins/init_sweetalert';
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+
+  initSweetalert('#unarchive-goal-sweet-alert', {
+    title: "Unarchive Goal?",
+    text: "Are you sure you want to unarchive this goal?",
+    icon: "warning"
+  }, (value) => {
+    if (value) {
+      const link = document.querySelector('#unarchive-goal');
+      link.click();
+    }
+  });
+
+  initSweetalert('#archive-goal-sweet-alert', {
+    title: "Archive Goal?",
+    text: "Are you sure you want to archive this goal?",
+    icon: "warning"
+  }, (value) => {
+    if (value) {
+      const link = document.querySelector('#archive-goal');
+      link.click();
+    }
+  });
+
 });

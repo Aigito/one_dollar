@@ -10,9 +10,8 @@ Specific CSS for your home-page
 }
 
 .image-size {
-  width: 17rem;
+  max-width: 18vw;
   height: auto;
-
 }
 
 .banner h1 {
@@ -64,4 +63,8 @@ Specific CSS for your home-page
 .carousel-control-next,
 .carousel-control-prev /*, .carousel-indicators */ {
     filter: invert(75%);
+}
+
+.text-heading {
+ color: #12d69f;
 }

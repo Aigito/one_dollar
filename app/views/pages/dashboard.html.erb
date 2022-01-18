@@ -20,7 +20,7 @@
             </button>
           </div>
           <div class="modal-body">
-            TO DO: Give goal suggestion
+            <%= @goal_suggestions[rand(0..@goal_suggestions.length)] %>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -78,7 +78,7 @@
           <% end %>
         <% end %>
 
-        <div class="col-4 d-flex justify-content-center align-items-center">
+        <div class="col-4 d-flex justify-content-center align-items-center card-min-height">
           <%= link_to new_goal_path do %>
             <i class="far fa-plus-square add-goal-button"></i>
           <% end %>

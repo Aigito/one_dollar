@@ -2,10 +2,8 @@
   <div class="jumbotron text-center">
     <h1 class="display-4"><b><%= "Welcome back, #{current_user.first_name} #{current_user.last_name}!"%></b></h1>
     <hr class="my-4">
-    <p><b>What do you feel like doing today?</b></p>
-    <p class="lead">
-      <a class="btn btn-primary btn-lg" href="goals/new" role="button">Add A New Goal</a>
-    </p>
+    <p><b>Need a goal suggestion?</b></p>
+
     <br>
     <br>
     <% if @total_invested > @investment %>
@@ -29,9 +27,6 @@
               <div class="card mb-4 h-100">
                 <div class="inner-card p-3">
                   <div class="float-right">
-                    <%= link_to goal_path(goal) do %>
-                      <i class="fas fa-trophy"></i>
-                    <% end %>
                     <%= link_to edit_goal_path(goal) do %>
                       <i class="fas fa-edit"></i>
                     <% end %>
@@ -48,7 +43,7 @@
                     <p class="card-text">Goal Amount: <%= goal.amount %></p>
                   </div>
                   <div class="card-footer">
-                    <small class="text-muted">TO DO: Days till completion</small>
+                    <small class="text-muted">Due Date: <%= goal.date %></small>
                   </div>
                 </div>
               </div>

@@ -4,6 +4,30 @@
     <hr class="my-4">
     <p><b>Need a goal suggestion?</b></p>
 
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Click Me!
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Goal Suggestion</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            TO DO: Give goal suggestion
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <br>
     <br>
     <% if @total_invested > @investment %>
@@ -27,6 +51,9 @@
               <div class="card mb-4 h-100">
                 <div class="inner-card p-3">
                   <div class="float-right">
+                    <%= link_to goal_path(goal) do %>
+                      <i class="fas fa-trophy"></i>
+                    <% end %>
                     <%= link_to edit_goal_path(goal) do %>
                       <i class="fas fa-edit"></i>
                     <% end %>

@@ -4,7 +4,7 @@ module ApplicationHelper
     if user.avatar.attached?
       user.avatar.variant(resize: "#{size}x#{size}")
     else
-    "account"
+      "account.png"
    end
   end
 end

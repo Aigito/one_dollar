@@ -10,7 +10,7 @@ class PagesController < ApplicationController
     @total_invested = 0
 
     @goals.each do |goal|
-      @total_invested += goal.amount if goal.user == current_user && goal.archived == false
+      @total_invested += goal.amount if goal.user == current_user && goal.archived != true
     end
 
     @investment = @user.investment

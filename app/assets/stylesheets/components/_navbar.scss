@@ -78,22 +78,12 @@ body::-webkit-scrollbar-thumb {
   color: var(--text-secondary);
 }
 
-#LogButton > a {
-  display: flex;
-  align-items: center;
-  height: 5rem;
-  color: var(--text-primary);
-  text-decoration: none;
-  filter: grayscale(100%) opacity(0.7);
-  transition: var(--transition-speed);
-}
-
-#LogButton > a:hover {
+.nav-links a:hover {
   text-decoration: none;
   filter: grayscale(0%) opacity(1);
-  background: var(--bg-secondary);
   color: var(--text-secondary);
 }
+
 
 .link-text {
   display:none;

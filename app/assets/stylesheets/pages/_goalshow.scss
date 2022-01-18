@@ -1,3 +1,6 @@
+.home-container {
+  background-color: white;
+}
 .heading-colour {
   // color: red;
   color: $heading-colour;
@@ -17,17 +20,21 @@
   background-color: $base-colour;
   border-radius: 6px;
   // border: 0.15rem solid lightgray;
-  box-shadow: 0 0 1px 1px lightgray;
+  box-shadow: 1px 1px 2px 0.5px #70c1ac;
 }
 
 .background-card-2 {
   background-color: white;
-  border-radius: 5px;
-  box-shadow: 0 0 1px 1px lightgray;
+  border-radius: 6px;
+  box-shadow: 1px 1px 2px 0.5px #89beb0;
 }
 
 .background-card-3 {
-  background-color: #12d69f;
   border-radius: 6px;
-  box-shadow: 0 0 1px 1px lightgray;
+  box-shadow: 0 1px 1px 1px #12d69f;
+}
+
+.banner-green {
+  background-color: #12d69f;
+  background-size: cover;
 }

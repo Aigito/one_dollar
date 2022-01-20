@@ -1,18 +1,45 @@
 <div class="main">
   <div class="jumbotron text-center">
     <h1 class="display-4"><b><%= "Welcome back, #{current_user.first_name} #{current_user.last_name}!"%></b></h1>
-    <p class="lead">Some Random Quotes (To Be Changed): <%= Faker::Movie.quote %></p>
     <hr class="my-4">
-    <p><b>What do you feel like doing today?</b></p>
-    <p class="lead">
-      <a class="btn btn-primary btn-lg" href="goals/new" role="button">Add A New Goal</a>
-    </p>
+    <p><b>Need a goal suggestion?</b></p>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Click Me!
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Goal Suggestion</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <%= @goal_suggestions[rand(0..@goal_suggestions.length)] %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <br>
     <br>
     <% if @total_invested > @investment %>
-      <p>Remaining Surplus Cash: <span style="color:red; font-weight:bold"> $<%= @total_invested %> </span> / $<%= @investment %></p>
+      <p>Total Surplus Cash / Week = $<%= @investment %></p>
+      <p>Total Invested / Week = $<%= @total_invested %></p>
+      <p>Deficit / Week = <span style="color:red; font-weight:bold">$<%= @investment - @total_invested %></span></p>
+      <br>
+      <p><span style="color:red; font-weight:bold; font-size: 24px;">Warning!</span> You are currently over-budget. Please reduce goal amounts or increase weekly investments!</p>
     <% else %>
-      <p>Remaining Surplus Cash:  <span style="color:#12D69F; font-weight:bold"> $<%= @total_invested %> </span> / $<%= @investment %></p>
+      <p>Total Surplus Cash / Week = $<%= @investment %></p>
+      <p>Total Invested / Week = $<%= @total_invested %></p>
+      <p>Remaining Surplus / Week = <span style="color:#12d69f; font-weight:bold">$<%= @investment - @total_invested %></span></p>
     <% end%>
   </div>
 
@@ -30,9 +57,8 @@
                     <%= link_to edit_goal_path(goal) do %>
                       <i class="fas fa-edit"></i>
                     <% end %>
-                    <%= link_to archive_goal_path(goal), method: :post, :onclick => "return confirm('Are you sure you want to archive this goal?')" do %>
-                      <i class="fas fa-archive"></i>
-                    <% end %>
+                    <button id="archive-goal-sweet-alert"><i class="fas fa-archive"></i></button>
+                    <%= link_to "", archive_goal_path(goal), method: :post, id: "archive-goal", class: "hidden" %>
                   </div>
                   <div class="card-top">
                     <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image caption">
@@ -43,13 +69,19 @@
                     <p class="card-text">Goal Amount: <%= goal.amount %></p>
                   </div>
                   <div class="card-footer">
-                    <small class="text-muted">TO DO: Days till completion</small>
+                    <small class="text-muted">Due Date: <%= goal.date %></small>
                   </div>
                 </div>
               </div>
             </div>
           <% end %>
         <% end %>
+
+        <div class="col-4 d-flex justify-content-center align-items-center card-min-height">
+          <%= link_to new_goal_path do %>
+            <i class="far fa-plus-square add-goal-button"></i>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

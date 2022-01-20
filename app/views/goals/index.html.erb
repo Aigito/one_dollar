@@ -7,31 +7,31 @@
         <% @goals.each do |goal| %>
           <% if goal.user == current_user && goal.archived == true %>
             <div class="col-4">
-              <div class="card mb-4 h-100">
-                <div class="inner-card p-3">
-                  <div class="float-right">
-                    <%= link_to goal_path(goal) do %>
-                      <i class="fas fa-trophy"></i>
-                    <% end %>
-                    <%= link_to edit_goal_path(goal) do %>
-                      <i class="fas fa-edit"></i>
-                    <% end %>
-                    <button id="unarchive-goal-sweet-alert"><i class="fas fa-box-open"></i></button>
-                    <%= link_to "", unarchive_goal_path(goal), method: :post, id: "unarchive-goal", class: "hidden" %>
-                  </div>
-                  <div class="card-top">
-                    <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image caption">
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title text-truncate">Title: <%= goal.title %></h5>
-                    <p class="card-text text-truncate">Description: <%= goal.description %></p>
-                    <p class="card-text">Goal Amount: <%= goal.amount %></p>
-                  </div>
-                  <div class="card-footer">
-                    <small class="text-muted">TO DO: Days till completion</small>
+              <div class="card mb-4 h-100 goal-card inner-card mt-3">
+                <%= link_to goal_path(goal), class:"goal-card-link-show linkable" do %><% end %>
+                  <div class="p-3">
+                    <div class="float-right">
+                      <%= link_to edit_goal_path(goal) do %>
+                        <i class="fas fa-edit"></i>
+                      <% end %>
+                      <button id="archive-goal-sweet-alert">
+                        <i class="fas fa-archive"></i>
+                        <%= link_to "", archive_goal_path(goal), method: :post, id: "archive-goal", class: "hidden" %>
+                      </button>
+                    </div>
+                    <div class="card-top">
+                      <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image caption"/>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title text-truncate">Title: <%= goal.title %></h5>
+                      <p class="card-text text-truncate">Description: <%= goal.description %></p>
+                      <p class="card-text">Goal Amount: <%= goal.amount %></p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">Due Date: <%= goal.date %></small>
+                    </div>
                   </div>
                 </div>
-              </div>
             </div>
           <% end %>
         <% end %>

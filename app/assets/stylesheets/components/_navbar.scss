@@ -124,6 +124,9 @@ body::-webkit-scrollbar-thumb {
   transform: rotate(-180deg);
 }
 
+.rounded-circle-navbar-profile-picture {
+  min-width: 40px;
+}
 
 /* Small Screen */
 @media only screen and (max-width: 600px) {

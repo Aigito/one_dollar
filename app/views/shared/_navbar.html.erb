@@ -12,8 +12,10 @@
             <a class="nav-links" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
               <%= image_tag user_avatar(current_user, 500), class: "avatar dropdown-toggle rounded-circle-navbar-profile-picture" %>
               <span class="link-text">
-              <%= "#{current_user.first_name} #{current_user.last_name}" %>
-              <i class="fa fa-chevron-down pull-right"></i>
+              <div class="d-flex justify-content-center align-items-center">
+                <%= "#{current_user.first_name} #{current_user.last_name}" %>
+                <i class="fa fa-chevron-down pull-right"></i>
+              </div>
               </span>
             </a>
             <div class="collapse" id="collapseExample">

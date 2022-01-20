@@ -1,4 +1,5 @@
 // app/javascript/plugins/init_sweetalert.js
+
 import swal from 'sweetalert';
 
 const initSweetalert = (selector, options = {}, callback = () => { }) => {

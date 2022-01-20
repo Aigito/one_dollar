@@ -5,6 +5,6 @@
   <%= f.input :description, :label => "Goal Description: " %>
   <%= f.input :amount, :label => "Amount: " %>
   <%= f.input :recurring_investment, :label => "Investment/week"%>
-  <%= f.input :date, :label => "When would you like to achieve this goal by? P/S: Be Reasonable" %>
+  <%= f.input :date, as: :string, input_html: {class: "datepicker"}, :label => "When would you like to achieve this goal by? P/S: Be Reasonable" %>
   <%= f.submit "Save", class: "btn btn-primary" %>
 <% end %>

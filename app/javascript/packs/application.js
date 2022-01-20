@@ -21,6 +21,8 @@ import "bootstrap";
 import "chartkick/chart.js";
 import "sweetalert";
 
+import { initFlatpickr } from "../plugins/flatpickr";
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -31,13 +33,17 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 
+  initFlatpickr();
+
   initSweetalert('#unarchive-goal-sweet-alert', {
     title: "Unarchive Goal?",
     text: "Are you sure you want to unarchive this goal?",
     icon: "warning"
   }, (value) => {
+    console.log(value);
     if (value) {
       const link = document.querySelector('#unarchive-goal');
+      // console.log(link);
       link.click();
     }
   });
@@ -49,6 +55,7 @@ document.addEventListener('turbolinks:load', () => {
   }, (value) => {
     if (value) {
       const link = document.querySelector('#archive-goal');
+      // console.log(link);
       link.click();
     }
   });

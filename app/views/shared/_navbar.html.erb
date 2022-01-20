@@ -1,14 +1,4 @@
-<head>
-  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
-
-</head>
-
-<body>
-
-
-    <nav class="navbar" id="navbar">
+<nav class="navbar" id="navbar">
       <ul class="navbar-nav">
 
           <li class="logo">
@@ -19,10 +9,21 @@
           </li>
 
           <li class="nav-item" id="Avatar">
-            <a href="/dashboard" class="nav-links">
+            <a class="nav-links" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
               <%= image_tag user_avatar(current_user, 500), class: "avatar dropdown-toggle rounded-circle-navbar-profile-picture" %>
-              <span class="link-text"><%= "#{current_user.first_name} #{current_user.last_name}" %></span>
+              <span class="link-text">
+              <%= "#{current_user.first_name} #{current_user.last_name}" %>
+              <i class="fa fa-chevron-down pull-right"></i>
+              </span>
             </a>
+            <div class="collapse" id="collapseExample">
+              <div class="nav-item nav-links" id="LogButton">
+                <%= link_to edit_user_registration_path do %>
+                <i class="fas fa-cogs"></i>
+                <span class="link-text">Settings</span>
+                <% end %>
+              </div>
+            </div>
           </li>
 
           <li class="nav-item">
@@ -35,7 +36,7 @@
           <li class="nav-item">
             <a href="/goals" class="nav-links">
               <i class="fas fa-bullseye"></i>
-              <span class="link-text">Archived Goals</span>
+              <span class="link-text">Goals</span>
             </a>
           </li>
 
@@ -46,6 +47,7 @@
             </a>
           </li>
 
+
           <li class="nav-item nav-links">
             <%= link_to edit_user_registration_path do %>
               <i class="fas fa-cogs "></i>
@@ -54,6 +56,7 @@
           </li>
 
           <li class="nav-item nav-links">
+
             <%= link_to destroy_user_session_path, method: :delete do %>
               <i class="fas fa-sign-out-alt"></i>
               <span class="link-text">Log Out</span>
@@ -61,4 +64,3 @@
           </li>
       </ul>
     </nav>
-</body>

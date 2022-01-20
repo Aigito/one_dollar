@@ -18,6 +18,13 @@ class GoalsController < ApplicationController
     @weeks_past = ((Date.today - @goal.created_at.to_date) / 7).to_i
     @total_saved = @weeks_past * @goal.recurring_investment
     @amount_in_year = @goal.recurring_investment * 52
+    @hash = {}
+    i = 0
+    loop do
+      @hash[Date.today + (i * 7)] = @goal.recurring_investment * i
+      i += 1
+      break if @goal.recurring_investment * (i - 1) >= @goal.amount
+    end
   end
 
   def new

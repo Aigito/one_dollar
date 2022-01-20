@@ -1,9 +1,9 @@
 <div class="home-container">
   <div class="banner">
     <div class="mx-10 p-6 mb-0">
-      <h1 class="heading-colour">Your Goal </h1>
+      <h1 class="heading-colour font-weight-900">Your Goal </h1>
       <br>
-      <h2 class="text-white"><%= @goal.title.capitalize %><h2>
+      <h2 class="text-white font-weight-900"><%= @goal.title.capitalize %><h2>
         <p class="text-size text-white"><%=@goal.description%></p>
     </div>
   </div>
@@ -25,8 +25,8 @@
     <br>
   <div class="background-card-2 mx-10 py-6 px-3 heading-colour text-size">
     <%= line_chart [
-      {name: "Projected Value", data: {Date.today => 0, Date.today.next_year(1).to_date => @amount_in_year }}
-    ], xtitle: "months", ytitle: "Total amount, $", prefix: "$", round: 2, zeros: true %>
+      {name: "Projected Value", data: @hash }
+    ], xtitle: "Weeks", ytitle: "Total amount, $", prefix: "$", round: 2, zeros: true %>
   </div>
     <%= link_to "Edit Goal", edit_goal_path(@goal) %>
 </div>

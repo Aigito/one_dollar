@@ -53,7 +53,6 @@ class GoalsController < ApplicationController
     @goal.update(archived: false)
     @goals = Goal.all
     redirect_to goals_path
-    # render :archived_goals_tab
   end
 
   def archived_goals_tab

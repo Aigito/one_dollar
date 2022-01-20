@@ -183,3 +183,15 @@ body::-webkit-scrollbar-thumb {
   padding-top: 0;
   margin-top: 0;
 }
+
+.fa-bars {
+  width: 1px;
+  height: 1px;
+}
+
+.fa {
+  transition: .3s transform ease-in-out;
+}
+.collapsed .fa {
+  transform: rotate(-90deg);
+}

@@ -73,3 +73,5 @@ gem 'income-tax', '~> 0.3.2'
 gem 'cloudinary', '~> 1.16.0'
 
 gem 'dotenv-rails', groups: [:development, :test, :product]
+
+gem 'date_wrapper'

@@ -8,3 +8,87 @@
   <%= f.input :date, :label => "When would you like to achieve this goal by? P/S: Be Reasonable" %>
   <%= f.submit "Save", class: "btn btn-primary" %>
 <% end %>
+
+<div class= "registration">
+  <div class = "card d-flex flex-row">
+    <div class= "card-block">
+        <div class="container" id="registration-header">
+          <div class="row">
+            <div class="col-12 col-lg-12">
+              <h1><%= t('.create_a_new_goal') %></h1>
+            </div>
+          </div>
+        </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-12 col-lg-12">
+                  <%= simple_form_for @goal do |f| %>
+
+                    <div class="form-floating mb-3">
+                      <%= f.text_field :title,
+                                        autofocus: true,
+                                        required: true,
+                                        autocomplete: 'goal_title',
+                                        class: 'form-control',
+                                        type: "goal_title",
+                                        id:"floatingGoalTitle",
+                                        placeholder:"Goal Title" %>
+                      <%= f.label :goal_title %>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                      <%= f.text_field :description,
+                                        autofocus: true,
+                                        required: true,
+                                        autocomplete: 'description',
+                                        class: 'form-control',
+                                        type: "description",
+                                        id:"floatingDescription",
+                                        placeholder:"Description" %>
+                      <%= f.label :description %>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                      <%= f.text_field :amount,
+                                        autofocus: true,
+                                        required: true,
+                                        autocomplete: 'amount',
+                                        class: 'form-control',
+                                        type: "amount",
+                                        id:"floatingAmount",
+                                        placeholder:"Amount" %>
+                      <%= f.label :amount %>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                      <%= f.text_field :recurring_investment,
+                                        autofocus: true,
+                                        required: true,
+                                        autocomplete: 'investmentperweek',
+                                        class: 'form-control',
+                                        type: "investmentperweek",
+                                        id:"floatingInvestmentPerWeek",
+                                        placeholder:"Investment per week" %>
+                      <%= f.label :investment_per_week %>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                    <%= f.input :date, as: :string, wrapper: :date, input_html: {value: I18n.l(f.object.date)} %>
+                    </div>
+
+                  <% end %>
+
+              </div>
+            </div>
+
+            </div>
+       </div>
+       <%# <div class="col-12 col-sm-4">
+            <%= image_tag "logo-removedbg.png", class: "registration-brand" %>
+            <%# <div class ="registration-brand-text">
+            <%= "One Dollar, helping you reach your financial goals!"%>
+            <%# </div>
+       </div> %>
+    </div>
+  </div>
+</div>

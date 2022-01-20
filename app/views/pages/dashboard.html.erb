@@ -53,12 +53,12 @@
                   <div class="container">
                     <div class="float-right d-flex flex-column">
                       <%= link_to goal_path(goal) do %>
-                        <i class="fas fa-trophy"></i>
+                        <i class="fas fa-trophy card-icon"></i>
                       <% end %>
                       <%= link_to edit_goal_path(goal) do %>
-                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-edit card-icon"></i>
                       <% end %>
-                      <i class="fas fa-archive" id="archive-goal-sweet-alert"></i>
+                      <i class="fas fa-archive card-icon" id="archive-goal-sweet-alert"></i>
                       <%= link_to "", archive_goal_path(goal), method: :post, id: "archive-goal", class: "hidden" %>
                     </div>
                     <div class="card-top">
@@ -81,7 +81,7 @@
 
         <div class="col-4 d-flex justify-content-center align-items-center card-min-height">
           <%= link_to new_goal_path do %>
-            <i class="fas fa-plus"></i>
+            <i class="fas fa-plus add-goal-plus-icon"></i>
           <% end %>
         </div>
       </div>

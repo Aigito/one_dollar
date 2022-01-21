@@ -19,6 +19,7 @@ ActiveStorage.start()
 // External imports
 import "bootstrap";
 import "chartkick/chart.js";
+import "sweetalert";
 
 import { initFlatpickr } from "../plugins/flatpickr";
 

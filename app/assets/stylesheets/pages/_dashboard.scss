@@ -14,6 +14,26 @@
   border: none;
 }
 
+.goal-card {
+  position: relative;
+}
+
+.goal-card-link-show {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.goal-card-link-show:hover {
+  text-decoration: none;
+}
+
+.linkable:hover{
+    background-color: #cacccf;
+    opacity: 0.4;
+}
 .inner-card {
   border: 1px solid rgba(0, 0, 0, 0.125);
   background-color: #FFF;
@@ -24,6 +44,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.float-right {
+  position: absolute;
+  right: 15px;
 }
 
 .float-right > a {

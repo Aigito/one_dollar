@@ -58,7 +58,19 @@
 .jumbotron {
   margin-bottom: 0;
   padding-bottom: 1px;
+  background: linear-gradient(25deg, rgb(39, 47, 47), rgb(47, 57, 57), #546565);
+  color: white;
 }
+
+.white {
+background: -webkit-gradient(linear, 0 0, 100% 0, from(transparent), to(transparent), color-stop(50%, white));
+}
+
+.heading-green {
+  color: $heading;
+  font-weight: 900;
+}
+
 
 .add-goal-button {
   font-size: 3rem;

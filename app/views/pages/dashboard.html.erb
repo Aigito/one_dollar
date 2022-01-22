@@ -61,7 +61,7 @@
                     <%= link_to "", archive_goal_path(goal), method: :post, id: "archive-goal", class: "hidden" %>
                   </div>
                   <div class="card-top">
-                    <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image caption">
+                    <%= image_tag goal_photo(goal, 500), class: "card-img-top" %>
                   </div>
                   <div class="card-body">
                     <h5 class="card-title text-truncate">Title: <%= goal.title %></h5>

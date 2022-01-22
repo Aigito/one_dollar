@@ -15,7 +15,7 @@
             <div class="row">
               <div class="col-12 col-lg-12">
                 <h1><!--<%= t('.Edit_your_goal') %>---></h1>
-                          </div>
+              </div>
             </div>
           </div>
               <div class="container">
@@ -71,6 +71,7 @@
                         <%= f.label :investment_per_week %>
                       </div>
 
+<<<<<<< HEAD
                       <div class="form-floating mb-3">
                         <%= f.input :date,
                                     as: :string,
@@ -91,6 +92,28 @@
                     <div class="col-12">
                     <%= f.submit "Save", class: "btn btn-primary" %>
                     </div>
+=======
+                    <div class="form-floating mb-3">
+                      <%= f.input :date,
+                                  as: :string,
+                                  autofocus: true,
+                                  required: true,
+                                  class: 'form-control',
+                                  input_html: {class: "datepicker"},
+                                  :label => "When would you like to achieve this goal by? P/S: Be Reasonable" %>
+                    </div>
+                </div>
+                    <div class="add-photo-form col-4 mb-3">
+                    <%= image_tag goal_photo(goal, 500), class: "goal-picture" %>
+                    <%= f.input :photo,
+                                as: :file,
+                                :label => "Add a custom photo to your goal"%>
+                    </div>
+
+
+                  <%= f.submit "Save", class: "btn btn-primary save-button" %>
+
+>>>>>>> 5242cbd19a91c2fe6cfba880077378663342cac4
 
 
                     <% end %>

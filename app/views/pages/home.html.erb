@@ -1,9 +1,12 @@
 <div class="home-container">
   <div class="banner d-flex justify-content-evenly align-items-center">
+    <div class="log-in-sign-up d-flex">
+      <span><%= link_to "Log In", new_user_session_path, class: "btn-green log-in-button"%></span>
+      <span><%= link_to "Sign Up", new_user_registration_path, class: "btn-green sign-up-button"%></span>
+    </div>
     <div>
         <h1 class="font-weight-900">Start saving for <br> your goals in life</h1>
-        <p>Save your gold, achieve your goals</p>
-        <span><%= link_to "Get Started", new_user_registration_path, class: "btn-green get-started"%></span>
+        <p>Save your gold, achieve your goals!</p>
     </div>
     <div>
       <%= image_tag "goldcoins.png", class: "image-size", alt: "captivating saving image" %>

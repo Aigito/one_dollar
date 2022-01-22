@@ -30,6 +30,9 @@
     </div>
     <br>
     <br>
+
+    <%# Summary of Cash, Investment and Surplus / Deficit %>
+
     <% if @total_invested > @investment %>
       <p>Total Surplus Cash / Week = $<%= @investment %></p>
       <p>Total Invested / Week = $<%= @total_invested %></p>
@@ -42,6 +45,8 @@
       <p>Remaining Surplus / Week = <span style="color:#12d69f; font-weight:bold">$<%= @investment - @total_invested %></span></p>
     <% end%>
   </div>
+
+  <%# Goals %>
 
   <div class="container">
     <div class="row">

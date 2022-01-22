@@ -55,8 +55,8 @@
                       <%= link_to edit_goal_path(goal) do %>
                         <i class="fas fa-edit"></i>
                       <% end %>
-                        <i class="fas fa-archive" id="archive-goal-sweet-alert"></i>
-                        <%= link_to "", archive_goal_path(goal), method: :post, id: "archive-goal", class: "hidden" %>
+                        <i class="fas fa-archive card-icon archive-goal-sweet-alert" data-archive-button="<%= goal.id %>" ></i>
+                      <%= link_to "", archive_goal_path(goal), method: :post, id: "archive-goal-#{goal.id}", class: "hidden" %>
                     </div>
                     <div class="card-top">
                       <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image caption"/>

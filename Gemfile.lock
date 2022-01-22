@@ -142,11 +142,6 @@ GEM
     msgpack (1.4.2)
     netrc (0.11.0)
     nio4r (2.5.8)
-<<<<<<< HEAD
-    nokogiri (1.13.0-x86_64-darwin)
-      racc (~> 1.4)
-=======
->>>>>>> 5242cbd19a91c2fe6cfba880077378663342cac4
     nokogiri (1.13.0-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)

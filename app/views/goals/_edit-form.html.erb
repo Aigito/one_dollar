@@ -8,14 +8,13 @@
 </div>
 
 
-  <div class= "goalform">
-    <div class = "card d-flex flex-row">
-      <div class= "card-block">
-          <div class="container" id="registration-header">
-            <div class="row">
-              <div class="col-12 col-lg-12">
-                <h1><!--<%= t('.Edit_your_goal') %>---></h1>
-                          </div>
+<div class= "goalform">
+  <div class = "card d-flex flex-row">
+    <div class= "card-block">
+        <div class="container" id="registration-header">
+          <div class="row">
+            <div class="col-12 col-lg-12">
+              <h1><!--<%= t('.Edit_your_goal') %>---></h1>
             </div>
           </div>
               <div class="container">
@@ -71,26 +70,25 @@
                         <%= f.label :investment_per_week %>
                       </div>
 
-                      <div class="form-floating mb-3">
-                        <%= f.input :date,
-                                    as: :string,
-                                    autofocus: true,
-                                    required: true,
-                                    class: 'form-control',
-                                    input_html: {class: "datepicker"},
-                                    :label => "When would you like to achieve this goal by? P/S: Be Reasonable" %>
-                      </div>
-                  </div>
-                      <div class="add-photo-form col-4 mb-3">
-                      <%= image_tag goal_photo(goal, 500), class: "goal-picture" %>
-                      <%= f.input :photo,
-                                  as: :file,
-                                  :label => "Add a custom photo to your goal"%>
-                      </div>
-
-                    <div class="col-12">
-                    <%= f.submit "Save", class: "btn btn-primary" %>
+                    <div class="form-floating mb-3">
+                      <%= f.input :date,
+                                  as: :string,
+                                  autofocus: true,
+                                  required: true,
+                                  class: 'form-control',
+                                  input_html: {class: "datepicker"},
+                                  :label => "When would you like to achieve this goal by? P/S: Be Reasonable" %>
                     </div>
+                </div>
+                    <div class="add-photo-form col-4 mb-3">
+                    <%= image_tag goal_photo(goal, 500), class: "goal-picture" %>
+                    <%= f.input :photo,
+                                as: :file,
+                                :label => "Add a custom photo to your goal"%>
+                    </div>
+
+
+                  <%= f.submit "Save", class: "btn btn-primary save-button" %>
 
 
                     <% end %>

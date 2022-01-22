@@ -47,4 +47,8 @@ document.addEventListener('turbolinks:load', () => {
     icon: "warning"
   });
 
+  $('#exampleModal').on('hidden.bs.modal', function () {
+    location.reload();
+  })
+
 });

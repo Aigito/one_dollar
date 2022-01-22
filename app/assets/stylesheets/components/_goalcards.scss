@@ -1,0 +1,34 @@
+.unarchive-goal-sweet-alert, .archive-goal-sweet-alert {
+  color: #12D69F;
+  text-decoration: none;
+  background-color: transparent;
+
+  &:hover {
+    color: #0c8f6b;
+    cursor: pointer;
+    transition: color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  }
+}
+
+.card-icon {
+  font-size: 22px;
+  color: #12D69F;
+  text-decoration: none;
+  background-color: transparent;
+
+  &:hover {
+    color: #0c8f6b;
+    cursor: pointer;
+    transition: color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  }
+}
+
+.add-goal-plus-icon {
+  font-size: 32px;
+}

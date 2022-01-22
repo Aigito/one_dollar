@@ -30,6 +30,9 @@
     </div>
     <br>
     <br>
+
+    <%# Summary of Cash, Investment and Surplus / Deficit %>
+
     <% if @total_invested > @investment %>
       <p>Total Surplus Cash / Week = $<%= @investment %></p>
       <p>Total Invested / Week = $<%= @total_invested %></p>
@@ -43,43 +46,42 @@
     <% end%>
   </div>
 
+  <%# Goals %>
+
   <div class="container">
     <div class="row">
         <% @goals.each do |goal| %>
           <% if goal.user == current_user && goal.archived != true %>
             <div class="col-4">
-              <div class="card mb-4 h-100">
-                <div class="inner-card p-3">
-                  <div class="float-right">
-                    <%= link_to goal_path(goal) do %>
-                      <i class="fas fa-trophy"></i>
-                    <% end %>
-                    <%= link_to edit_goal_path(goal) do %>
-                      <i class="fas fa-edit"></i>
-                    <% end %>
-                    <button id="archive-goal-sweet-alert"><i class="fas fa-archive"></i></button>
-                    <%= link_to "", archive_goal_path(goal), method: :post, id: "archive-goal", class: "hidden" %>
-                  </div>
-                  <div class="card-top">
-                    <%= image_tag goal_photo(goal, 500), class: "card-img-top" %>
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title text-truncate">Title: <%= goal.title %></h5>
-                    <p class="card-text text-truncate">Description: <%= goal.description %></p>
-                    <p class="card-text">Goal Amount: <%= goal.amount %></p>
-                  </div>
-                  <div class="card-footer">
-                    <small class="text-muted">Due Date: <%= goal.date %></small>
+              <div class="card mb-4 h-100 goal-card inner-card mt-3">
+                <%= link_to goal_path(goal), class:"goal-card-link-show linkable" do %><% end %>
+                  <div class="p-3">
+                    <div class="float-right d-flex flex-column card-icon">
+                      <%= link_to edit_goal_path(goal) do %>
+                        <i class="fas fa-edit"></i>
+                      <% end %>
+                        <i class="fas fa-archive card-icon archive-goal-sweet-alert" data-archive-button="<%= goal.id %>" ></i>
+                      <%= link_to "", archive_goal_path(goal), method: :post, id: "archive-goal-#{goal.id}", class: "hidden" %>
+                    </div>
+                    <div class="card-top">
+                      <%= image_tag goal_photo(goal, 500), class: "card-img-top" %>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title text-truncate">Title: <%= goal.title %></h5>
+                      <p class="card-text text-truncate">Description: <%= goal.description %></p>
+                      <p class="card-text">Goal Amount: $<%= goal.amount %></p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">Due Date: <%= goal.date %></small>
+                    </div>
                   </div>
                 </div>
-              </div>
             </div>
           <% end %>
         <% end %>
-
         <div class="col-4 d-flex justify-content-center align-items-center card-min-height">
           <%= link_to new_goal_path do %>
-            <i class="far fa-plus-square add-goal-button"></i>
+            <i class="fas fa-plus add-goal-plus-icon"></i>
           <% end %>
         </div>
       </div>

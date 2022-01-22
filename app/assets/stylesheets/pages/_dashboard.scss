@@ -7,13 +7,29 @@
 }
 
 .card-img-top {
-  width: 13.2rem;
+  width: 11.3rem;
   height: 13.2rem;
   object-fit: cover;
 }
 
 .card {
   border: none;
+}
+
+.goal-card {
+  position: relative;
+}
+
+.goal-card-link-show {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.goal-card-link-show:hover {
+  text-decoration: none;
 }
 
 .inner-card {
@@ -23,9 +39,16 @@
 
 .card-top {
   // padding: 1rem;
+  margin-top:.3rem;
+  padding-bottom: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.float-right {
+  position: absolute;
+  right: 15px;
 }
 
 .float-right > a {
@@ -43,4 +66,11 @@
 
 .card-min-height {
   min-height: 320px;
+}
+
+a {
+  transition: color 0.15s ease-in-out,
+  background-color 0.15s ease-in-out,
+  border-color 0.15s ease-in-out,
+  box-shadow 0.15s ease-in-out;
 }

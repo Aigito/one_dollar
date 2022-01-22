@@ -65,6 +65,9 @@
 .white {
 background: -webkit-gradient(linear, 0 0, 100% 0, from(transparent), to(transparent), color-stop(50%, white));
 }
+.base-colour {
+  color: $base-colour;
+}
 
 .heading-green {
   color: $heading;

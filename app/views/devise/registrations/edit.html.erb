@@ -1,7 +1,16 @@
+<div class="banner">
+  <div class="mx-10 p-6 mb-0">
+    <h1 class="heading-colour font-weight-900 my-7">Edit User </h1>
+    <br>
+    <% # <h2 class="text-white font-weight-900"><h2> %>
+    <%# <p class="text-size text-white">Want to bring some goals back to life?</p> %>
+  </div>
+</div>
+
 rail<div class= "registration">
 <div class = "card">
   <div class= "card-block">
-    <div class="container"><h1><%= t('.title', resource: resource_name.to_s.humanize) %></h1></div>
+    <div class="container"></div>
       <div class="container">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= bootstrap_devise_error_messages! %>

@@ -35,29 +35,20 @@ document.addEventListener('turbolinks:load', () => {
 
   initFlatpickr();
 
-  initSweetalert('#unarchive-goal-sweet-alert', {
+  initSweetalert('.unarchive-goal-sweet-alert', {
     title: "Unarchive Goal?",
     text: "Are you sure you want to unarchive this goal?",
     icon: "warning"
-  }, (value) => {
-    console.log(value);
-    if (value) {
-      const link = document.querySelector('#unarchive-goal');
-      // console.log(link);
-      link.click();
-    }
   });
 
-  initSweetalert('#archive-goal-sweet-alert', {
+  initSweetalert('.archive-goal-sweet-alert', {
     title: "Archive Goal?",
     text: "Are you sure you want to archive this goal?",
     icon: "warning"
-  }, (value) => {
-    if (value) {
-      const link = document.querySelector('#archive-goal');
-      // console.log(link);
-      link.click();
-    }
   });
+
+  $('#exampleModal').on('hidden.bs.modal', function () {
+    location.reload();
+  })
 
 });

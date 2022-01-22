@@ -36,7 +36,7 @@ class GoalsController < ApplicationController
     @goal.user = current_user
     @goal.archived = false
     if @goal.save
-      redirect_to goals_path
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -64,7 +64,7 @@ class GoalsController < ApplicationController
 
   def update
     if @goal.update(goal_params)
-      redirect_to goals_path
+      redirect_to dashboard_path
     else
       render :edit
     end
@@ -77,6 +77,6 @@ class GoalsController < ApplicationController
   end
 
   def goal_params
-    params.require(:goal).permit(:title, :description, :amount, :recurring_investment, :date, :user_id)
+    params.require(:goal).permit(:title, :description, :amount, :recurring_investment, :date, :user_id, :photo)
   end
 end

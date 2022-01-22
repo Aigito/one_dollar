@@ -5,6 +5,14 @@ module ApplicationHelper
       user.avatar.variant(resize: "#{size}x#{size}")
     else
       "account.png"
-   end
+    end
+  end
+
+  def goal_photo(goal, size = 40)
+    if goal.photo.attached?
+      goal.photo.variant(resize: "#{size}x#{size}")
+    else
+      "logo-removedbg.png"
+    end
   end
 end

@@ -7,7 +7,9 @@
 }
 
 .card-img-top {
-  width: 50%;
+  width: 11.3rem;
+  height: 13.2rem;
+  object-fit: cover;
 }
 
 .card {
@@ -30,17 +32,15 @@
   text-decoration: none;
 }
 
-.linkable:hover{
-    background-color: #cacccf;
-    opacity: 0.4;
-}
 .inner-card {
   border: 1px solid rgba(0, 0, 0, 0.125);
   background-color: #FFF;
 }
 
 .card-top {
-  padding: 1rem;
+  // padding: 1rem;
+  margin-top:.3rem;
+  padding-bottom: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -85,4 +85,13 @@ a {
   background-color 0.15s ease-in-out,
   border-color 0.15s ease-in-out,
   box-shadow 0.15s ease-in-out;
+}
+
+.linkable {
+ background-color: rgb(170, 215, 215);
+ opacity: 5%;
+}
+.linkable:hover {
+ background-color: rgb(170, 215, 215);
+ opacity: 30%;
 }

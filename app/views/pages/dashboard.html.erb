@@ -30,6 +30,9 @@
     </div>
     <br>
     <br>
+
+    <%# Summary of Cash, Investment and Surplus / Deficit %>
+
     <% if @total_invested > @investment %>
       <p>Total Surplus Cash / Week = $<%= @investment %></p>
       <p>Total Invested / Week = $<%= @total_invested %></p>
@@ -43,6 +46,8 @@
     <% end%>
   </div>
 
+  <%# Goals %>
+
   <div class="container">
     <div class="row">
         <% @goals.each do |goal| %>
@@ -55,11 +60,11 @@
                       <%= link_to edit_goal_path(goal) do %>
                         <i class="fas fa-edit"></i>
                       <% end %>
-                        <i class="fas fa-archive" id="archive-goal-sweet-alert"></i>
-                        <%= link_to "", archive_goal_path(goal), method: :post, id: "archive-goal", class: "hidden" %>
+                        <i class="fas fa-archive card-icon archive-goal-sweet-alert" data-archive-button="<%= goal.id %>" ></i>
+                      <%= link_to "", archive_goal_path(goal), method: :post, id: "archive-goal-#{goal.id}", class: "hidden" %>
                     </div>
                     <div class="card-top">
-                      <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image caption"/>
+                      <%= image_tag goal_photo(goal, 500), class: "card-img-top" %>
                     </div>
                     <div class="card-body">
                       <h5 class="card-title text-truncate">Title: <%= goal.title %></h5>

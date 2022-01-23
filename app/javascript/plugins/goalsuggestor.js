@@ -1,4 +1,4 @@
-const goalsuggestor = (() => {
+const goalsuggestor= (() => {
   const suggestions = [
       "Give to charity",
       "Build up emergency fund",
@@ -8,21 +8,29 @@ const goalsuggestor = (() => {
       "Nice bottle of wine",
       "Gift to a friend",
       "Retirement!!!",
-      "Down payment for a horse",
+      "Down payment for a horse, yes...a horse",
       "Le Wagon Coding Bootcamp",
       "Index Fund / EFTs",
       "Gym Equipment"
     ]
 
+  let currentSuggestion = ""
+  let previousSuggestion = ""
+
   const randomizer = (() => {
-    return suggestions[Math.floor(Math.random() * suggestions.length)]
+    currentSuggestion = suggestions[Math.floor(Math.random() * suggestions.length)]
   });
 
   const button = document.querySelector('.goal-suggestion-button')
   const modaltext = document.querySelector('.modal-body')
 
   button.addEventListener('click', function(){
-    modaltext.innerHTML = randomizer()
+    while (currentSuggestion == previousSuggestion ) {
+      randomizer();
+    };
+
+    previousSuggestion = currentSuggestion
+    modaltext.innerHTML = currentSuggestion
   });
 });
 

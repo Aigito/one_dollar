@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_08_053718) do
+ActiveRecord::Schema.define(version: 2022_01_24_001037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(version: 2022_01_08_053718) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "archived"
-    t.float "recurring_investment"
+    t.boolean "archived", default: false
+    t.integer "recurring_investment"
     t.index ["user_id"], name: "index_goals_on_user_id"
   end
 

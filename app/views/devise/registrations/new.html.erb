@@ -69,7 +69,8 @@
                                           type: "investment",
                                           id:"floatingInvestment",
                                           placeholder: "Investment Amount" %>
-                      <%= f.label :investment_amount %>
+                      <small class="form-text text-muted"><%= t('.If unsure enter 0, can be editted in settings later') %></small>
+                      <%= f.label :investment_amount_per_week %>
                     </div>
 
                     <div class="form-floating mb-3">

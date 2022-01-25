@@ -2,12 +2,9 @@
   <div class="mx-10 p-6 mb-0">
     <h1 class="heading-colour font-weight-900 align-middle">Archived Goals </h1>
     <br>
-    <% # <h2 class="text-white font-weight-900"><h2> %>
     <p class="text-size text-white">Want to bring some goals back to life?</p>
   </div>
 </div>
-
-<div class="container">
 
   <div class="container">
     <div class="row">
@@ -22,7 +19,7 @@
                       <%= link_to "", unarchive_goal_path(goal), method: :post, id: "unarchive-goal-#{goal.id}", class: "hidden" %>
                     </div>
                     <div class="card-top">
-                      <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image caption"/>
+                      <%= image_tag goal_photo(goal, 500), class: "card-img-top" %>
                     </div>
                     <div class="card-body">
                       <h5 class="card-title text-truncate">Title: <%= goal.title %></h5>
@@ -38,5 +35,4 @@
           <% end %>
         <% end %>
     </div>
-
-</div>
+  </div>

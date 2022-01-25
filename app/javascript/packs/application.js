@@ -29,6 +29,9 @@ import { initFlatpickr } from "../plugins/flatpickr";
 // Import Sweet Alert
 import { initSweetalert } from '../plugins/init_sweetalert';
 
+// Import goalsuggestor
+import { goalsuggestor } from '../plugins/goalsuggestor';
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
@@ -47,8 +50,5 @@ document.addEventListener('turbolinks:load', () => {
     icon: "warning"
   });
 
-  $('#exampleModal').on('hidden.bs.modal', function () {
-    location.reload();
-  })
-
+  goalsuggestor();
 });

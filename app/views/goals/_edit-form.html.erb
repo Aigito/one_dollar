@@ -1,3 +1,11 @@
+<div class="banner w-100 d-flex align-items-center justify-content-center">
+  <div class="mx-10 p-8">
+    <h1 class="heading-colour font-weight-900 align-middle text-responsive-heading">Edit your goal</h1>
+    <br>
+    <% # <h2 class="text-white font-weight-900"><h2> %>
+    <p class="text-size text-white text-responsive">What do you want to change?</p>
+  </div>
+</div>
 
 <div class= "goalform">
   <div class = "card d-flex flex-row">
@@ -9,11 +17,11 @@
             </div>
           </div>
         </div>
+
+          <%= simple_form_for @goal do |f| %>
             <div class="container">
               <div class="row">
-                <div class="col-8 mb-3">
-                  <%= simple_form_for @goal do |f| %>
-
+                  <div class="col-8 mb-3">
                     <div class="form-floating mb-3">
                       <%= f.text_field :title,
                                         autofocus: true,
@@ -26,41 +34,41 @@
                       <%= f.label :goal_title %>
                     </div>
 
-                    <div class="form-floating mb-3">
-                      <%= f.text_field :description,
-                                        autofocus: true,
-                                        required: true,
-                                        autocomplete: 'description',
-                                        class: 'form-control',
-                                        type: "description",
-                                        id:"floatingDescription",
-                                        placeholder:"Description" %>
-                      <%= f.label :description %>
-                    </div>
+                      <div class="form-floating mb-3">
+                        <%= f.text_field :description,
+                                          autofocus: true,
+                                          required: true,
+                                          autocomplete: 'description',
+                                          class: 'form-control',
+                                          type: "description",
+                                          id:"floatingDescription",
+                                          placeholder:"Description" %>
+                        <%= f.label :description %>
+                      </div>
 
-                    <div class="form-floating mb-3">
-                      <%= f.text_field :amount,
-                                        autofocus: true,
-                                        required: true,
-                                        autocomplete: 'amount',
-                                        class: 'form-control',
-                                        type: "amount",
-                                        id:"floatingAmount",
-                                        placeholder:"Amount" %>
-                      <%= f.label :amount %>
-                    </div>
+                      <div class="form-floating mb-3">
+                        <%= f.text_field :amount,
+                                          autofocus: true,
+                                          required: true,
+                                          autocomplete: 'amount',
+                                          class: 'form-control',
+                                          type: "amount",
+                                          id:"floatingAmount",
+                                          placeholder:"Amount" %>
+                        <%= f.label :amount %>
+                      </div>
 
-                    <div class="form-floating mb-3">
-                      <%= f.text_field :recurring_investment,
-                                        autofocus: true,
-                                        required: true,
-                                        autocomplete: 'investmentperweek',
-                                        class: 'form-control',
-                                        type: "investmentperweek",
-                                        id:"floatingInvestmentPerWeek",
-                                        placeholder:"Investment per week" %>
-                      <%= f.label :investment_per_week %>
-                    </div>
+                      <div class="form-floating mb-3">
+                        <%= f.text_field :recurring_investment,
+                                          autofocus: true,
+                                          required: true,
+                                          autocomplete: 'investmentperweek',
+                                          class: 'form-control',
+                                          type: "investmentperweek",
+                                          id:"floatingInvestmentPerWeek",
+                                          placeholder:"Investment per week" %>
+                        <%= f.label :investment_per_week %>
+                      </div>
 
                     <div class="form-floating mb-3">
                       <%= f.input :date,
@@ -71,25 +79,22 @@
                                   input_html: {class: "datepicker"},
                                   :label => "When would you like to achieve this goal by? P/S: Be Reasonable" %>
                     </div>
-                </div>
-                    <div class="add-photo-form col-4 mb-3">
+                  </div>
+                  <div class="add-photo-form col-4 mb-3">
                     <%= image_tag goal_photo(goal, 500), class: "goal-picture" %>
                     <%= f.input :photo,
                                 as: :file,
                                 :label => "Add a custom photo to your goal"%>
-                    </div>
-
+                  </div>
 
                   <%= f.submit "Save", class: "btn btn-primary save-button" %>
 
 
 
-                  <% end %>
-
               </div>
             </div>
+            <% end %>
           </div>
        </div>
     </div>
   </div>
-</div>

@@ -4,9 +4,20 @@ Specific CSS for your home-page
 }
 
 .banner {
-  background-color: rgb(39, 47, 47);
+  background: linear-gradient(25deg, rgb(39, 47, 47), rgb(47, 57, 57), #546565);
   background-size: cover;
   height: 24vw;
+}
+.text-responsive-heading {
+  font-size: calc(190% + 1vw + 1vh);
+}
+
+.text-responsive-middle {
+  font-size: calc(120% + 1vw + 1vh);
+}
+
+.text-responsive {
+  font-size: calc(50% + 0.5vw + 0.5vh);
 }
 
 .image-size {
@@ -16,6 +27,10 @@ Specific CSS for your home-page
 
 .banner h1 {
   color: #12d69f;
+}
+
+.align-middle {
+  vertical-align: middle;
 }
 
 .font-weight-900 {
@@ -34,12 +49,13 @@ Specific CSS for your home-page
 .log-in-button, .sign-up-button {
     background-color: #12d69f;
     color:white;
-    padding: 10px 20px;
+    padding: 0.4vw 0.8vh;
     display: inline-block;
-    border-radius: 20px;
-    margin-top: 20px;
+    border-radius: 10%;
+    margin-top: 1.5vh;
     text-decoration: none;
-    margin-right: 10px;
+    margin-right: 0.5vw;
+    font-size: calc(20% + 0.5vw + 0.5vh);
 
   &:hover {
     text-decoration: none;
@@ -49,7 +65,7 @@ Specific CSS for your home-page
 }
 
 .sign-up-button {
-  margin-right: 64px;
+  margin-right: 2.5vw;
 }
 
 .text-container {
@@ -57,9 +73,6 @@ Specific CSS for your home-page
   max-width: 20vw;
 }
 
-.text-container p {
-  font-size: 16px;
-}
 .text-colour {
   color: rgb(39, 47, 47);
 }

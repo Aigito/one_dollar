@@ -1,16 +1,16 @@
 <div class="main">
   <div class="jumbotron text-center">
-    <h1 class="display-4"><b><%= "Welcome back, #{current_user.first_name} #{current_user.last_name}!"%></b></h1>
-    <hr class="my-4">
+    <h1 class="display-4 heading-green"><b><%= "Hi, #{current_user.first_name} #{current_user.last_name}!"%></b></h1>
+    <hr class="my-4 white">
     <p><b>Need a goal suggestion?</b></p>
 
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    <button type="button" class="btn btn-primary goal-suggestion-button" data-toggle="modal" data-target="#exampleModal">
       Click Me!
     </button>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade base-colour" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -20,7 +20,6 @@
             </button>
           </div>
           <div class="modal-body">
-            <%= @goal_suggestions[rand(0..@goal_suggestions.length)] %>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

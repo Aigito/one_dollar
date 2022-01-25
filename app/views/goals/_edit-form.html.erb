@@ -1,3 +1,12 @@
+ <div class="banner w-100">
+  <div class="mx-10 p-6 mb-0">
+    <h1 class="heading-colour font-weight-900 align-middle">Edit your goal</h1>
+    <br>
+    <% # <h2 class="text-white font-weight-900"><h2> %>
+    <p class="text-size text-white">What do you want to change?</p>
+  </div>
+</div>
+
 <div class= "goalform">
   <div class = "card d-flex flex-row">
     <div class= "card-block">
@@ -25,41 +34,41 @@
                       <%= f.label :goal_title %>
                     </div>
 
-                    <div class="form-floating mb-3">
-                      <%= f.text_field :description,
-                                        autofocus: true,
-                                        required: true,
-                                        autocomplete: 'description',
-                                        class: 'form-control',
-                                        type: "description",
-                                        id:"floatingDescription",
-                                        placeholder:"Description" %>
-                      <%= f.label :description %>
-                    </div>
+                      <div class="form-floating mb-3">
+                        <%= f.text_field :description,
+                                          autofocus: true,
+                                          required: true,
+                                          autocomplete: 'description',
+                                          class: 'form-control',
+                                          type: "description",
+                                          id:"floatingDescription",
+                                          placeholder:"Description" %>
+                        <%= f.label :description %>
+                      </div>
 
-                    <div class="form-floating mb-3">
-                      <%= f.text_field :amount,
-                                        autofocus: true,
-                                        required: true,
-                                        autocomplete: 'amount',
-                                        class: 'form-control',
-                                        type: "amount",
-                                        id:"floatingAmount",
-                                        placeholder:"Amount" %>
-                      <%= f.label :amount %>
-                    </div>
+                      <div class="form-floating mb-3">
+                        <%= f.text_field :amount,
+                                          autofocus: true,
+                                          required: true,
+                                          autocomplete: 'amount',
+                                          class: 'form-control',
+                                          type: "amount",
+                                          id:"floatingAmount",
+                                          placeholder:"Amount" %>
+                        <%= f.label :amount %>
+                      </div>
 
-                    <div class="form-floating mb-3">
-                      <%= f.text_field :recurring_investment,
-                                        autofocus: true,
-                                        required: true,
-                                        autocomplete: 'investmentperweek',
-                                        class: 'form-control',
-                                        type: "investmentperweek",
-                                        id:"floatingInvestmentPerWeek",
-                                        placeholder:"Investment per week" %>
-                      <%= f.label :investment_per_week %>
-                    </div>
+                      <div class="form-floating mb-3">
+                        <%= f.text_field :recurring_investment,
+                                          autofocus: true,
+                                          required: true,
+                                          autocomplete: 'investmentperweek',
+                                          class: 'form-control',
+                                          type: "investmentperweek",
+                                          id:"floatingInvestmentPerWeek",
+                                          placeholder:"Investment per week" %>
+                        <%= f.label :investment_per_week %>
+                      </div>
 
                     <div class="form-floating mb-3">
                       <%= f.input :date,
@@ -81,6 +90,7 @@
                   <%= f.submit "Save", class: "btn btn-primary save-button" %>
 
 
+
               </div>
             </div>
             <% end %>
@@ -88,4 +98,3 @@
        </div>
     </div>
   </div>
-</div>

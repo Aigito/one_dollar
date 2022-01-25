@@ -4,7 +4,7 @@ Specific CSS for your home-page
 }
 
 .banner {
-  background-color: rgb(39, 47, 47);
+  background: linear-gradient(25deg, rgb(39, 47, 47), rgb(47, 57, 57), #546565);
   background-size: cover;
   height: 24vw;
 }
@@ -31,20 +31,25 @@ Specific CSS for your home-page
   margin-bottom: 0px;
 }
 
-.get-started {
+.log-in-button, .sign-up-button {
     background-color: #12d69f;
     color:white;
-    padding: 10px 50px;
+    padding: 10px 20px;
     display: inline-block;
-    border-radius: 6px;
+    border-radius: 20px;
     margin-top: 20px;
     text-decoration: none;
+    margin-right: 10px;
 
   &:hover {
     text-decoration: none;
     background-color: #079a70;
     color:white;
   }
+}
+
+.sign-up-button {
+  margin-right: 64px;
 }
 
 .text-container {
@@ -67,4 +72,10 @@ Specific CSS for your home-page
 
 .text-heading {
  color: #12d69f;
+}
+
+.log-in-sign-up {
+  position: absolute;
+  top: 0;
+  right: 0;
 }

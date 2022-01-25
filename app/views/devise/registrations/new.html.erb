@@ -1,3 +1,13 @@
+<div class="banner">
+  <div class="mx-10 p-6 mb-0">
+    <h1 class="heading-colour font-weight-900 align-middle">Sign Up </h1>
+    <br>
+    <% # <h2 class="text-white font-weight-900"><h2> %>
+    <p class="text-size text-white">Sign up to start saving now</p>
+  </div>
+</div>
+
+
 <div class= "registration">
   <div class = "card d-flex flex-row">
     <div class= "card-block">
@@ -59,7 +69,8 @@
                                           type: "investment",
                                           id:"floatingInvestment",
                                           placeholder: "Investment Amount" %>
-                      <%= f.label :investment_amount %>
+                      <small class="form-text text-muted"><%= t('.If unsure enter 0, can be editted in settings later') %></small>
+                      <%= f.label :investment_amount_per_week %>
                     </div>
 
                     <div class="form-floating mb-3">
@@ -88,7 +99,7 @@
                       <%= f.submit t('.sign_up'), class: 'btn btn-primary' %>
                     </div>
 
-                    <%= render 'devise/shared/links' %>
+                    <%= link_to "Back", :back, class: "btn btn-primary" %>
                   <% end %>
 
               </div>
@@ -99,7 +110,7 @@
        <div class="col-12 col-sm-4">
             <%= image_tag "logo-removedbg.png", class: "registration-brand" %>
             <div class ="registration-brand-text">
-            <%= "One Dollar, helping you reach your financial goals!"%>
+              <p>Already a member? <br><%= link_to "Log in here!", user_session_path %></p>
             </div>
        </div>
     </div>

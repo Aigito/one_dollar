@@ -18,6 +18,7 @@
 
 .goal-card {
   position: relative;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .goal-card-link-show {
@@ -26,6 +27,8 @@
   right: 0;
   left: 0;
   bottom: 0;
+  border-radius: 8px;
+  box-shadow: 0px 5px 15px;
 }
 
 .goal-card-link-show:hover {

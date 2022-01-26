@@ -5,6 +5,15 @@ class GoalsController < ApplicationController
     @goals = Goal.all
   end
 
+  def update_goal_extra_saved
+    @goal = Goal.find(params[:id])
+    if @goal.update(goal_extra_saved_params)
+      redirect_to goal_path(find_goal)
+    else
+      render :show
+    end
+  end
+
   def show
     find_goal
     @days_left = (@goal.date - Date.today).to_i
@@ -16,7 +25,8 @@ class GoalsController < ApplicationController
       @time_left = "#{@days_left} day/s"
     end
     @weeks_past = ((Date.today - @goal.created_at.to_date) / 7).to_i
-    @total_saved = @weeks_past * @goal.recurring_investment
+    @total_saved = find_goal.extra_saved + @weeks_past * @goal.recurring_investment
+    @outstanding_amount = @goal.amount - @total_saved
     @amount_in_year = @goal.recurring_investment * 52
     @hash = {}
     i = 0
@@ -25,6 +35,7 @@ class GoalsController < ApplicationController
       i += 1
       break if @goal.recurring_investment * (i - 1) >= @goal.amount
     end
+
   end
 
   def new
@@ -79,4 +90,9 @@ class GoalsController < ApplicationController
   def goal_params
     params.require(:goal).permit(:title, :description, :amount, :recurring_investment, :date, :user_id, :photo)
   end
+
+  def goal_extra_saved_params
+    params.require(:goal).permit(:extra_saved)
+  end
+
 end

@@ -1,31 +1,38 @@
 <div class="home-container">
-  <div class="banner">
-    <div class="mx-10 p-6 mb-0">
-      <h1 class="heading-colour font-weight-900">Your Goal </h1>
+  <div class="banner d-flex justify-content-evenly align-items-center">
+    <div>
+      <h1 class="heading-colour font-weight-900 text-responsive-heading">Your Goal: </h1>
       <br>
-      <h2 class="text-white font-weight-900"><%= @goal.title.capitalize %><h2>
-        <p class="text-size text-white"><%=@goal.description%></p>
-    </div>
-  </div>
-   <div class="banner-green mt-0 py-3 px-6 text-size">
-    <div class="progress-title">
-        <p class= "text-center">Total Amount: <span style="color: #272F2F"><%= number_to_currency(@total_saved, format: "%u%n") %> / $<%= @goal.amount %></span></p>
-        <div class="progress mx-10">
-          <div class="progress-bar progress-bar-striped bg-secondary w3-center" role="progressbar" style="width:<%= @total_saved %> / <%= @goal.amount %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><%= number_to_currency(@total_saved, format: "%u%n") %> / $<%= @goal.amount %>  </div>
-        </div>
+      <h2 class="text-white font-weight-900 text-center text-title"><%= @goal.title.capitalize %><h2>
+        <p class="text-white text-center text-size"><%=@goal.description%></p>
     </div>
   </div>
     <br>
   <div class="background-card-2 mx-10 py-3 px-6 heading-colour text-size">
-    <p>Amount: <span style="color: #272F2F"><%= number_to_currency(@goal.amount, format: "%u%n") %></span></p>
-    <p>Recurring_investment: <span style="color: #272F2F"><%= number_to_currency(@goal.recurring_investment, format: "%u%n") %>/week</span></p>
-    <p>Total amount reached: <span style="color: #272F2F"><%= number_to_currency(@total_saved, format: "%u%n") %></span>
-    <p>Days left: <span style="color: #272F2F"><%= @time_left %></span></p>
+    <p>Goal Amount: <span style="color: #272F2F"><%= number_to_currency(@goal.amount, format: "%u%n") %></span></p>
+    <p>Outstanding Amount: <span style="color: #272F2F"><%= number_to_currency(@outstanding_amount) %></span></p>
+    <p>Days Left Till Due Date: <span style="color: #272F2F"><%= @time_left %></span></p>
+    <p>Recurring Investment: <span style="color: #272F2F"><%= number_to_currency(@goal.recurring_investment, format: "%u%n") %>/week</span></p>
+    <p>Extra Savings (Optional): <span style="color: #272F2F"><%= number_to_currency(@goal.extra_saved) %></span></p>
+      <%= simple_form_for @goal, url: update_goal_extra_saved_path(@goal), html: {method: :post} do |f| %>
+        <div class="form-floating mb-3">
+          <%= f.text_field :extra_saved,
+                            autofocus: true,
+                            required: true,
+                            autocomplete: 'extrasaved',
+                            class: 'form-control extra-saving-form',
+                            type: "extrasaved",
+                            id:"floatingExtraSaved",
+                            placeholder:"Extra Saved" %>
+        </div>
+
+        <%= f.submit "Save", class: "btn btn-primary save-button" %>
+      <% end %>
   </div>
     <br>
   <div class="background-card-2 mx-10 py-6 px-3 heading-colour text-size">
     <%= line_chart [
-      {name: "Projected Value", data: @hash }
+      { name: "Projected Value", data: @hash }
     ], xtitle: "Weeks", ytitle: "Total amount, $", prefix: "$", round: 2, zeros: true %>
   </div>
   <br>

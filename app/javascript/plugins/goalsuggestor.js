@@ -1,4 +1,4 @@
-const goalsuggestor= (() => {
+const goalsuggestor = (() => {
   const suggestions = [
       "Give to charity",
       "Build up emergency fund",
@@ -24,14 +24,16 @@ const goalsuggestor= (() => {
   const button = document.querySelector('.goal-suggestion-button')
   const modaltext = document.querySelector('.modal-body')
 
-  button.addEventListener('click', function(){
-    while (currentSuggestion == previousSuggestion ) {
-      randomizer();
-    };
+  if (button) {
+    button.addEventListener('click', function(){
+      while (currentSuggestion == previousSuggestion ) {
+        randomizer();
+      };
 
-    previousSuggestion = currentSuggestion
-    modaltext.innerHTML = currentSuggestion
-  });
+      previousSuggestion = currentSuggestion
+      modaltext.innerHTML = currentSuggestion
+    });
+  }
 });
 
 export { goalsuggestor };

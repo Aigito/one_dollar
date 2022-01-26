@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   post 'goals/:id/archive', to: 'goals#archive', as: :archive_goal
   post 'goals/:id/unarchive', to: 'goals#unarchive', as: :unarchive_goal
+  post 'goals/:id/update_goal_extra_saved', to: 'goals#update_goal_extra_saved', as: :update_goal_extra_saved
 
   resources :goals
 

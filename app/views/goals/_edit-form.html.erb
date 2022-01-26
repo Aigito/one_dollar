@@ -1,39 +1,38 @@
-<div class="banner w-100">
-  <div class="mx-10 p-6 mb-0">
-    <h1 class="heading-colour font-weight-900 align-middle">Edit your goal</h1>
+<div class="banner w-100 d-flex align-items-center justify-content-center">
+  <div class="mx-10 p-8">
+    <h1 class="heading-colour font-weight-900 align-middle text-responsive-heading">Edit your goal</h1>
     <br>
     <% # <h2 class="text-white font-weight-900"><h2> %>
-    <p class="text-size text-white">What do you want to change?</p>
+    <p class="text-size text-white text-responsive">What do you want to change?</p>
   </div>
 </div>
 
-
-  <div class= "goalform">
-    <div class = "card d-flex flex-row">
-      <div class= "card-block">
-          <div class="container" id="registration-header">
-            <div class="row">
-              <div class="col-12 col-lg-12">
-                <h1><!--<%= t('.Edit_your_goal') %>---></h1>
-              </div>
+<div class= "goalform">
+  <div class = "card d-flex flex-row">
+    <div class= "card-block">
+        <div class="container" id="registration-header">
+          <div class="row">
+            <div class="col-12 col-lg-12">
+              <h1><%= t('.edit_your_goal') %></h1>
             </div>
           </div>
-              <div class="container">
-                <div class="row">
-                  <div class="col-8 mb-3">
-                    <%= simple_form_for @goal do |f| %>
+        </div>
 
-                      <div class="form-floating mb-3">
-                        <%= f.text_field :title,
-                                          autofocus: true,
-                                          required: true,
-                                          autocomplete: 'goal_title',
-                                          class: 'form-control',
-                                          type: "goal_title",
-                                          id:"floatingGoalTitle",
-                                          placeholder:"Goal Title" %>
-                        <%= f.label :goal_title %>
-                      </div>
+          <%= simple_form_for @goal do |f| %>
+            <div class="container">
+              <div class="row">
+                  <div class="col-8 mb-3">
+                    <div class="form-floating mb-3">
+                      <%= f.text_field :title,
+                                        autofocus: true,
+                                        required: true,
+                                        autocomplete: 'goal_title',
+                                        class: 'form-control',
+                                        type: "goal_title",
+                                        id:"floatingGoalTitle",
+                                        placeholder:"Goal Title" %>
+                      <%= f.label :goal_title %>
+                    </div>
 
                       <div class="form-floating mb-3">
                         <%= f.text_field :description,
@@ -80,25 +79,22 @@
                                   input_html: {class: "datepicker"},
                                   :label => "When would you like to achieve this goal by? P/S: Be Reasonable" %>
                     </div>
-                </div>
-                    <div class="add-photo-form col-4 mb-3">
+                  </div>
+                  <div class="add-photo-form col-4 mb-3">
                     <%= image_tag goal_photo(goal, 500), class: "goal-picture" %>
                     <%= f.input :photo,
                                 as: :file,
                                 :label => "Add a custom photo to your goal"%>
-                    </div>
-
+                  </div>
 
                   <%= f.submit "Save", class: "btn btn-primary save-button" %>
 
 
 
-                    <% end %>
-
-                </div>
               </div>
             </div>
-        </div>
-      </div>
+            <% end %>
+          </div>
+       </div>
     </div>
   </div>

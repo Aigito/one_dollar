@@ -76,15 +76,22 @@
                       <small class="text-muted">Due Date: <%= goal.date %></small>
                     </div>
                   </div>
-                </div>
+              </div>
             </div>
           <% end %>
         <% end %>
-        <div class="col-4 d-flex justify-content-center align-items-center card-min-height mt-3">
-          <%= link_to new_goal_path do %>
-            <i class="fas fa-plus add-goal-plus-icon"></i>
-          <% end %>
+
+        <div class="col-4 mb-4 add-card-height">
+          <div class="card h-100 goal-card inner-card mt-3 d-flex justify-content-center align-items-center">
+            <%= link_to new_goal_path, class:"goal-card-link-show linkable" do %><% end %>
+            <div class="p-3">
+              <div class="card-body">
+                <i class="fas fa-plus add-goal-plus-icon"></i>
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
   </div>

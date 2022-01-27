@@ -80,9 +80,16 @@ background: -webkit-gradient(linear, 0 0, 100% 0, from(transparent), to(transpar
   font-weight: 900;
 }
 
-
 .add-goal-button {
   font-size: 3rem;
+}
+
+.add-goal-plus-icon {
+  color: $green;
+}
+
+.add-card-height {
+  height: 468px;
 }
 
 .card-min-height {

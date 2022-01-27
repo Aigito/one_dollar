@@ -1,8 +1,10 @@
 <div class="home-container">
   <div class="banner d-flex justify-content-evenly align-items-center">
     <div class="log-in-sign-up d-flex">
+    <% if !user_signed_in? %>
       <span><%= link_to "Log In", new_user_session_path, class: "btn-green log-in-button"%></span>
       <span><%= link_to "Sign Up", new_user_registration_path, class: "btn-green sign-up-button"%></span>
+    <% end %>
     </div>
     <div class="text-responsive">
         <h1 class="font-weight-900 text-responsive-heading">Start saving for <br> your goals in life</h1>

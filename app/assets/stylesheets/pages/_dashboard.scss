@@ -9,7 +9,7 @@
 .card-img-top {
   width: 11.3rem;
   height: 13.2rem;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 8px;
 }
 
@@ -102,10 +102,10 @@ a {
 }
 
 .linkable {
- background-color: rgb(170, 215, 215);
- opacity: 5%;
+  background-color: rgb(170, 215, 215);
+  opacity: 5%;
 }
 .linkable:hover {
- background-color: rgb(170, 215, 215);
- opacity: 30%;
+  background-color: rgb(170, 215, 215);
+  opacity: 30%;
 }

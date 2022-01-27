@@ -29,13 +29,20 @@ class GoalsController < ApplicationController
     @outstanding_amount = @goal.amount - @total_saved
     @amount_in_year = @goal.recurring_investment * 52
     @hash = {}
+    @hash2 = {}
     i = 0
+    j = 0
     loop do
       @hash[Date.today + (i * 7)] = @goal.recurring_investment * i
       i += 1
       break if @goal.recurring_investment * (i - 1) >= @goal.amount
     end
 
+    loop do
+      @hash2[Date.today + (j * 7)] = @goal.recurring_investment * j + @goal.extra_saved
+      j += 1
+      break if (@goal.recurring_investment * (j - 1) + @goal.extra_saved) >= @goal.amount
+    end
   end
 
   def new
@@ -75,7 +82,7 @@ class GoalsController < ApplicationController
 
   def update
     if @goal.update(goal_params)
-      redirect_to dashboard_path
+      redirect_to goal_path(find_goal)
     else
       render :edit
     end

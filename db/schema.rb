@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2022_01_25_094041) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "archived"
+    t.boolean "archived", default: false
     t.integer "recurring_investment"
     t.integer "extra_saved", default: 0
     t.index ["user_id"], name: "index_goals_on_user_id"

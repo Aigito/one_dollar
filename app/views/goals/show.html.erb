@@ -1,7 +1,7 @@
 <div class="home-container">
   <div class="banner d-flex justify-content-evenly align-items-center">
-    <div>
-      <h1 class="heading-colour font-weight-900 text-responsive-heading">Your Goal: </h1>
+    <div style="text-align: center;">
+      <h1 class="heading-colour font-weight-900 text-responsive-heading">Goal: </h1>
       <br>
       <h2 class="text-white font-weight-900 text-center text-title"><%= @goal.title.capitalize %><h2>
         <p class="text-white text-center text-size"><%=@goal.description%></p>
@@ -11,7 +11,7 @@
   <div class="background-card-2 mx-10 py-3 px-6 heading-colour text-size">
     <p>Goal Amount: <span style="color: #272F2F"><%= number_to_currency(@goal.amount, format: "%u%n") %></span></p>
     <p>Outstanding Amount: <span style="color: #272F2F"><%= number_to_currency(@outstanding_amount) %></span></p>
-    <p>Days Left Till Due Date: <span style="color: #272F2F"><%= @time_left %></span></p>
+    <p>Due Date: <span style="color: #272F2F"><%= @goal.date %> (<%= @time_left %>)</span></p>
     <p>Recurring Investment: <span style="color: #272F2F"><%= number_to_currency(@goal.recurring_investment, format: "%u%n") %>/week</span></p>
     <p>Extra Savings (Optional): <span style="color: #272F2F"><%= number_to_currency(@goal.extra_saved) %></span></p>
       <%= simple_form_for @goal, url: update_goal_extra_saved_path(@goal), html: {method: :post} do |f| %>
@@ -32,7 +32,8 @@
     <br>
   <div class="background-card-2 mx-10 py-6 px-3 heading-colour text-size">
     <%= line_chart [
-      { name: "Projected Value", data: @hash }
+      { name: "Projected Performance", data: @hash },
+      { name: "Actual Performance", data: @hash2 }
     ], xtitle: "Weeks", ytitle: "Total amount, $", prefix: "$", round: 2, zeros: true %>
   </div>
   <br>

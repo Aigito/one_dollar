@@ -21,6 +21,7 @@
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 8px;
+  max-height: 468px;
 }
 
 .goal-card-link-show {
@@ -85,7 +86,12 @@ background: -webkit-gradient(linear, 0 0, 100% 0, from(transparent), to(transpar
 }
 
 .card-min-height {
-  min-height: 320px;
+  height: 468px;
+  max-width: 358px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 8px;
+  margin: 15px;
+  background-color: #E6F3F325;
 }
 
 a {

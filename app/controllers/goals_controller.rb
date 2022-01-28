@@ -43,6 +43,23 @@ class GoalsController < ApplicationController
       j += 1
       break if (@goal.recurring_investment * (j - 1) + @goal.extra_saved) >= @goal.amount
     end
+
+    red = "#FF0000"
+    blue = "#0000FF"
+    green = "#109618"
+    pink = "#FFC0CB"
+
+    @weeks_left_by_user = (@days_left / 7).floor
+    @weeks_left_by_goal = @outstanding_amount / @goal.recurring_investment
+    @warning_message = "Warning! Expected completion date is after user set due date!"
+
+    if @weeks_left_by_user < @weeks_left_by_goal
+      @first_line = red
+      @second_line = green
+    else
+      @first_line = blue
+      @second_line = green
+    end
   end
 
   def new
